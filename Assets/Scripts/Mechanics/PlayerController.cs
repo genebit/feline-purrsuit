@@ -4,7 +4,14 @@ namespace Mechanic
 {
     public class PlayerController : MonoBehaviour
     {
-        public float moveSpeed = 5f;
+        #region Inspector View
+        [Range(0, 5f)]
+        public float moveSpeed = 2f;
+
+        [Range(0, 5f)]
+        public float sprintSpeed = 3f;
+        public bool controlEnabled;
+        #endregion
 
         private Rigidbody2D rb;
 
@@ -15,13 +22,36 @@ namespace Mechanic
 
         private void Update()
         {
-            // Input handling
-            float moveHorizontal = Input.GetAxisRaw("Horizontal");
-            float moveVertical = Input.GetAxisRaw("Vertical");
+            if (controlEnabled)
+            {
+                // Input handling
+                float horizontalInput = Input.GetAxisRaw("Horizontal");
+                float verticalInput = Input.GetAxisRaw("Vertical");
 
-            // Movement calculation
+                // Movement calculation
+                Move(horizontalInput, verticalInput);
+
+                // Sprint handling
+                Sprint();
+            }
+        }
+
+        private void Move(float moveHorizontal, float moveVertical)
+        {
             Vector2 movement = new Vector2(moveHorizontal, moveVertical).normalized * moveSpeed * Time.deltaTime;
             rb.MovePosition(rb.position + movement);
+        }
+
+        private void Sprint()
+        {
+            if (Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                moveSpeed = Mathf.Lerp(moveSpeed, sprintSpeed, 1f);
+            }
+            else if (Input.GetKeyUp(KeyCode.LeftShift))
+            {
+                moveSpeed = 2f;
+            }
         }
     }
 }
