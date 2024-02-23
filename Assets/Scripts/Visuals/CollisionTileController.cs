@@ -6,14 +6,13 @@ namespace Visuals
     public class CollisionTileController : MonoBehaviour
     {
         [SerializeField]
-        private TilemapRenderer tilemapRenderer;
-
-        [SerializeField]
         public bool showRenderer = false;
+
+        private TilemapRenderer tilemapRenderer;
 
         private void Start()
         {
-            tilemapRenderer.GetComponent<TilemapRenderer>();
+            tilemapRenderer = gameObject.GetComponent<TilemapRenderer>();
             tilemapRenderer.enabled = showRenderer;
         }
     }
