@@ -20,6 +20,11 @@ namespace UI
             TransitionManager.Instance().Transition("[1] Onboarding", transitionSettings, loadDelay);
         }
 
+        public void ExitGame()
+        {
+            TransitionManager.Instance().Transition("[0] Main Menu", transitionSettings, loadDelay);
+        }
+
         public void QuitGame()
         {
             Application.Quit();
