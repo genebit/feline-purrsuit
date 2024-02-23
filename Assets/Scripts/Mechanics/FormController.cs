@@ -20,6 +20,12 @@ public class FormController : MonoBehaviour
         }
     }
 
+    public void RandomizeName()
+    {
+        string[] randomNames = { "Bubbles", "Whiskers", "Bob", "Boomer", "Dizzy", "Doodle", "Bongo", "Tom", "Darren", "Karen", "Weeboo", "Borgor", "Gene" };
+        inputfield.text = randomNames[Random.Range(0, randomNames.Length)];
+    }
+
     public void Submit()
     {
         // Form validation
