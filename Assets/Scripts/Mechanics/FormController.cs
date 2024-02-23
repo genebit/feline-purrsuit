@@ -12,6 +12,14 @@ public class FormController : MonoBehaviour
     [SerializeField]
     private TMP_InputField inputfield;
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            Submit();
+        }
+    }
+
     public void Submit()
     {
         // Form validation
