@@ -6,12 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main Menu Scene.unity
+    path: Assets/Scenes/[0] Main Menu.unity
     guid: 5c7391974b75a9e41a21a13ed267c9d7
   - enabled: 1
     path: Assets/Scenes/Game Scene.unity
     guid: d55bed77ca222ea48ac54bcea675d7f8
   - enabled: 1
-    path: Assets/Scenes/Underwater Scene.unity
+    path: Assets/Scenes/Underwater.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}

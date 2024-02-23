@@ -17,7 +17,7 @@ namespace UI
         public void StartGame()
         {
             boatAnimation.SetBool("TakeOff", true);
-            TransitionManager.Instance().Transition("Game Scene", transitionSettings, loadDelay);
+            TransitionManager.Instance().Transition("[1] Onboarding", transitionSettings, loadDelay);
         }
 
         public void QuitGame()
