@@ -22,8 +22,6 @@ public class InputController : MonoBehaviour
 
         if (!rayHit.collider) return;
 
-        Debug.Log(rayHit.collider.gameObject.name);
-
         if (rayHit.collider.gameObject.name == "Start Area") menuManager.StartGame();
     }
 }
