@@ -1141,6 +1141,67 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &1174490560
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7171994356510524942, guid: 3cfd2fb926b17534f99fde81c4a64a91, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7171994356510524942, guid: 3cfd2fb926b17534f99fde81c4a64a91, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7171994356510524942, guid: 3cfd2fb926b17534f99fde81c4a64a91, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 7171994356510524942, guid: 3cfd2fb926b17534f99fde81c4a64a91, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 7171994356510524942, guid: 3cfd2fb926b17534f99fde81c4a64a91, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.68081576
+      objectReference: {fileID: 0}
+    - target: {fileID: 7171994356510524942, guid: 3cfd2fb926b17534f99fde81c4a64a91, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.68081576
+      objectReference: {fileID: 0}
+    - target: {fileID: 7171994356510524942, guid: 3cfd2fb926b17534f99fde81c4a64a91, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.1910235
+      objectReference: {fileID: 0}
+    - target: {fileID: 7171994356510524942, guid: 3cfd2fb926b17534f99fde81c4a64a91, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.1910235
+      objectReference: {fileID: 0}
+    - target: {fileID: 7171994356510524942, guid: 3cfd2fb926b17534f99fde81c4a64a91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -58.654
+      objectReference: {fileID: 0}
+    - target: {fileID: 7171994356510524942, guid: 3cfd2fb926b17534f99fde81c4a64a91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7171994356510524942, guid: 3cfd2fb926b17534f99fde81c4a64a91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7171994356510524977, guid: 3cfd2fb926b17534f99fde81c4a64a91, type: 3}
+      propertyPath: simulationSpeed
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7171994356510524979, guid: 3cfd2fb926b17534f99fde81c4a64a91, type: 3}
+      propertyPath: m_Name
+      value: Cloud Particles
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3cfd2fb926b17534f99fde81c4a64a91, type: 3}
 --- !u!1 &1276056000
 GameObject:
   m_ObjectHideFlags: 0
