@@ -77,8 +77,8 @@ public class DialogueController : MonoBehaviour
         {
             // get the parent of the game object and set it to inactive
             transform.parent.gameObject.SetActive(false);
-
             model.player.controlEnabled = true;
+            model.hudCanvas.SetActive(true);
         }
     }
 }
