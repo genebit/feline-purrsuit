@@ -7,7 +7,7 @@
 
 --- 
 
-### A Wholesome 2D Cat Catcher - Isometric Game built in Unity. Capture Cats, </br> Take care for them, and Save the town of Townsville from Catastrophe!
+*A Wholesome 2D Cat Catcher - Isometric Game built in Unity. Capture Cats, </br> Take care for them, and Save the town of Townsville from Catastrophe!*
 </div>
 
 
