@@ -11,6 +11,8 @@ namespace Mechanic
         [Range(0, 5f)]
         public float sprintSpeed = 3f;
         public bool controlEnabled;
+
+        public ParticleSystem dustParticle;
         #endregion
 
         private Rigidbody2D rb;
@@ -40,6 +42,19 @@ namespace Mechanic
         {
             Vector2 movement = new Vector2(moveHorizontal, moveVertical).normalized * moveSpeed * Time.deltaTime;
             rb.MovePosition(rb.position + movement);
+            HandleDustParticle(movement);
+        }
+
+        private void HandleDustParticle(Vector2 movement)
+        {
+            if (movement != Vector2.zero)
+            {
+                dustParticle.Play();
+            }
+            else
+            {
+                dustParticle.Stop();
+            }
         }
 
         private void Sprint()
