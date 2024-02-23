@@ -20,15 +20,55 @@ public class DialogueController : MonoBehaviour
     private string[] lines;
     #endregion
 
+    private string[] speakerNames;
     private int index;
+    private string playerName;
 
     private readonly IsoModel model = Simulation.GetModel<IsoModel>();
 
     // Start is called before the first frame update
     void Start()
     {
+        // Initialize
         dialogueText.text = string.Empty;
+        speakerNames = new string[lines.Length];
+        playerName = PlayerPrefs.GetString("PlayerName");
+
+        ProcessLines();
         StartDialogue();
+    }
+
+    private void ProcessLines()
+    {
+        const string PLAYER = "[PLAYER]";
+        const string TOWN_MAYOR = "[TOWN MAYOR]";
+        const string S_TOWN_MAYOR = "TOWN MAYOR";
+
+        const string TOWNS_FOLK = "[TOWNSFOLK]";
+        const string S_TOWNS_FOLK = "TOWNSFOLK";
+
+        for (int i = 0; i < lines.Length; i++)
+        {
+            // find a word [PLAYER] and replace it with the
+            // player's name through playerprefs PlayerName
+            if (lines[i].Contains(PLAYER))
+            {
+                lines[i] = lines[i].Replace(PLAYER, playerName).Trim();
+                speakerNames[i] = playerName.ToUpper();
+            }
+            // find a word [TOWN MAYOR] and remove it from dialogue text
+            if (lines[i].Contains(TOWN_MAYOR))
+            {
+                speakerNames[i] = S_TOWN_MAYOR;
+                lines[i] = lines[i].Replace(TOWN_MAYOR, string.Empty).Trim();
+            }
+            // find a word [TOWNSFOLK] and remove it from dialogue text
+            if (lines[i].Contains(TOWNS_FOLK))
+            {
+                speakerNames[i] = S_TOWNS_FOLK;
+                lines[i] = lines[i].Replace(TOWNS_FOLK, string.Empty).Trim();
+            }
+        }
     }
 
     // Update is called once per frame
@@ -56,6 +96,9 @@ public class DialogueController : MonoBehaviour
 
     IEnumerator TypeLine()
     {
+        SetSpeakerName();
+        RemovePlayerNameOnDialogue();
+
         float waitTime = 1f / textSpeed;
 
         foreach (char c in lines[index].ToCharArray())
@@ -67,6 +110,9 @@ public class DialogueController : MonoBehaviour
 
     void NextLine()
     {
+        SetSpeakerName();
+        RemovePlayerNameOnDialogue();
+
         if (index < lines.Length - 1)
         {
             index++;
@@ -79,6 +125,20 @@ public class DialogueController : MonoBehaviour
             transform.parent.gameObject.SetActive(false);
             model.player.controlEnabled = true;
             model.hudCanvas.SetActive(true);
+        }
+    }
+
+    void SetSpeakerName()
+    {
+        heading.text = speakerNames[index];
+    }
+
+    void RemovePlayerNameOnDialogue()
+    {
+        // remove the player's name from the dialogue if it's the player's turn to speak
+        if (speakerNames[index].Equals(PlayerPrefs.GetString("PlayerName").ToUpper()))
+        {
+            lines[index] = lines[index].Replace(PlayerPrefs.GetString("PlayerName"), string.Empty).Trim();
         }
     }
 }
