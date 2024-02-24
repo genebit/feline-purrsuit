@@ -1,4 +1,6 @@
+using Core;
 using EasyTransition;
+using Model;
 using UnityEngine;
 
 public class PlayerEnteredHouseController : MonoBehaviour
@@ -8,11 +10,14 @@ public class PlayerEnteredHouseController : MonoBehaviour
 
     private bool canTransition = false;
 
+    private readonly IsoModel model = Simulation.GetModel<IsoModel>();
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Press E to continue");
+            model.actionPrompt.Prompt("Press E to unpack");
+
             canTransition = true;
         }
     }
@@ -21,6 +26,8 @@ public class PlayerEnteredHouseController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            model.actionPrompt.Close();
+
             canTransition = false;
         }
     }
@@ -29,7 +36,6 @@ public class PlayerEnteredHouseController : MonoBehaviour
     {
         if (canTransition && Input.GetKeyDown(KeyCode.E))
         {
-            Debug.Log("Pressed");
             TransitionManager.Instance().Transition("[1] Onboarding", transitionSettings, 0);
         }
     }

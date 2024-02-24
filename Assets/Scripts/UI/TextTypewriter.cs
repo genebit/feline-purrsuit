@@ -15,6 +15,12 @@ public class TextTypewriter : MonoBehaviour
         GetComponent<TextMeshProUGUI>().text = "";
     }
 
+    public void PlayText()
+    {
+        StartCoroutine(TypeText());
+        GetComponent<TextMeshProUGUI>().text = "";
+    }
+
     IEnumerator TypeText()
     {
         for (int i = 0; i < fullText.Length; i++)

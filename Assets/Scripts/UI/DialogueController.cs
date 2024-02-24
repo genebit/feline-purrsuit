@@ -121,6 +121,7 @@ public class DialogueController : MonoBehaviour
         }
         else
         {
+            // The dialogue scene is finished...
             // get the parent of the game object and set it to inactive
             transform.parent.gameObject.SetActive(false);
             model.player.controlEnabled = true;

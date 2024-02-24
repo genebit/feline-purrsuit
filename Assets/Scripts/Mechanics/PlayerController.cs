@@ -13,6 +13,7 @@ namespace Mechanic
         public bool controlEnabled;
 
         public ParticleSystem dustParticle;
+        public GameObject actionPrompt;
         #endregion
 
         private Rigidbody2D rb;

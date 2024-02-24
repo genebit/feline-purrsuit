@@ -11,5 +11,7 @@ namespace Model
         public PlayerController player;
 
         public GameObject hudCanvas;
+
+        public ActionPromptController actionPrompt;
     }
 }
