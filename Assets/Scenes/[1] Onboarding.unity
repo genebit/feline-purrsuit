@@ -1570,7 +1570,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 2.15
+  orthographic size: 2.5
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -1849,7 +1849,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 2.15
+  orthographic size: 2.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -7958,7 +7958,7 @@ MonoBehaviour:
   m_Follow: {fileID: 1996537206}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 2.15
+    OrthographicSize: 2.5
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -8843,7 +8843,7 @@ GameObject:
   - component: {fileID: 1700077590}
   - component: {fileID: 1700077589}
   m_Layer: 5
-  m_Name: Dialogue System
+  m_Name: Opening Dialogue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

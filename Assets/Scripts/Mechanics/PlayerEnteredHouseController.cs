@@ -34,6 +34,7 @@ public class PlayerEnteredHouseController : MonoBehaviour
 
     private void Update()
     {
+        // NOTE(GENE): this is specific only for scene [1] Onboarding
         if (canTransition && Input.GetKeyDown(KeyCode.E))
         {
             TransitionManager.Instance().Transition("[1] Onboarding", transitionSettings, 0);
