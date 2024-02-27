@@ -3,12 +3,20 @@ using EasyTransition;
 using Model;
 using UnityEngine;
 
-public class PlayerEnteredHouseController : MonoBehaviour
+public class PlayerEnterTransitionableController : MonoBehaviour
 {
     [SerializeField]
     private TransitionSettings transitionSettings;
 
+    [SerializeField]
+    private string promptMessage;
+
+    [SerializeField]
+    [StringInList(typeof(PropertyDrawersHelper), "AllSceneNames")] 
+    private string transitionTo;
+
     private bool canTransition = false;
+
 
     private readonly IsoModel model = Simulation.GetModel<IsoModel>();
 
@@ -16,7 +24,7 @@ public class PlayerEnteredHouseController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            model.actionPrompt.Prompt("Press E to unpack");
+            model.playerActionPrompt.Prompt(promptMessage);
 
             canTransition = true;
         }
@@ -26,7 +34,7 @@ public class PlayerEnteredHouseController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            model.actionPrompt.Close();
+            model.playerActionPrompt.Close();
 
             canTransition = false;
         }
@@ -34,10 +42,9 @@ public class PlayerEnteredHouseController : MonoBehaviour
 
     private void Update()
     {
-        // NOTE(GENE): this is specific only for scene [1] Onboarding
         if (canTransition && Input.GetKeyDown(KeyCode.E))
         {
-            TransitionManager.Instance().Transition("[1] Onboarding", transitionSettings, 0);
+            TransitionManager.Instance().Transition(transitionTo, transitionSettings, 0);
         }
     }
 }

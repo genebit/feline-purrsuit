@@ -10,8 +10,9 @@ namespace Model
 
         public PlayerController player;
 
+        public ActionPromptController playerActionPrompt;
+
         public GameObject hudCanvas;
 
-        public ActionPromptController actionPrompt;
     }
 }
