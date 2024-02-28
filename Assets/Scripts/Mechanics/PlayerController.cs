@@ -6,14 +6,19 @@ namespace Mechanic
     {
         #region Inspector View
         [Range(0, 5f)]
-        public float moveSpeed = 2f;
+        public float moveSpeed = 2.5f;
 
         [Range(0, 5f)]
-        public float sprintSpeed = 3f;
+        public float sprintSpeed = 3.5f;
         public bool controlEnabled;
 
         public ParticleSystem dustParticle;
         public GameObject actionPrompt;
+
+        [Header("Attack")]
+        [SerializeField]
+        [Range(0, 10f)]
+        private float attackRadius = 2f;
         #endregion
 
         private Rigidbody2D rb;
@@ -36,6 +41,15 @@ namespace Mechanic
 
                 // Sprint handling
                 Sprint();
+
+                // Catch attack
+                if (Input.GetMouseButtonDown(0))
+                {
+                    Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                    mousePosition.z = 0;
+                    Vector3 attackDir = (mousePosition - transform.position).normalized;
+                    Debug.Log(attackDir.ToString());
+                }
             }
         }
 
@@ -66,8 +80,14 @@ namespace Mechanic
             }
             else if (Input.GetKeyUp(KeyCode.LeftShift))
             {
-                moveSpeed = 2f;
+                moveSpeed = 2.5f;
             }
+        }
+
+        void OnDrawGizmosSelected()
+        {
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawWireSphere(transform.position, attackRadius);
         }
     }
 }

@@ -753,6 +753,7 @@ MonoBehaviour:
   controlEnabled: 1
   dustParticle: {fileID: 1102814342}
   actionPrompt: {fileID: 0}
+  attackRadius: 0.55
 --- !u!212 &467693769
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7068,11 +7069,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 972140240287268096, guid: dcce7dd7e645b8a43aab4ff5b47a506d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.877
+      value: 0.496
       objectReference: {fileID: 0}
     - target: {fileID: 972140240287268096, guid: dcce7dd7e645b8a43aab4ff5b47a506d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.626
+      value: 0.708
       objectReference: {fileID: 0}
     - target: {fileID: 972140240287268096, guid: dcce7dd7e645b8a43aab4ff5b47a506d, type: 3}
       propertyPath: m_LocalPosition.z
