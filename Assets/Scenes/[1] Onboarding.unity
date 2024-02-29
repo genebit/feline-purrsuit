@@ -2703,6 +2703,7 @@ MonoBehaviour:
   - "[TOWN MAYOR] We\u2019ll talk business when your done unpacking. Feel free to
     get to know some of our fine folks here."
   - '[PLAYER] ... Alright thanks! I''ll see you in a bit Mayor.'
+  transitionSettings: {fileID: 0}
 --- !u!1001 &582359757
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5246,7 +5247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startAt: 3
-  endAt: 5
+  endAt: 10
 --- !u!114 &1350656333
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,8 +1,10 @@
 using Core;
+using EasyTransition;
 using Model;
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DialogueController : MonoBehaviour
 {
@@ -18,6 +20,9 @@ public class DialogueController : MonoBehaviour
 
     [SerializeField]
     private string[] lines;
+
+    [SerializeField]
+    private TransitionSettings transitionSettings;
     #endregion
 
     private string[] speakerNames;
@@ -121,11 +126,19 @@ public class DialogueController : MonoBehaviour
         }
         else
         {
-            // The dialogue scene is finished...
-            // get the parent of the game object and set it to inactive
-            transform.parent.gameObject.SetActive(false);
-            model.player.controlEnabled = true;
-            model.hudCanvas.SetActive(true);
+            // specific only to scene [2.2] tutorial
+            if (SceneManager.GetActiveScene().buildIndex == 3)
+            {
+                TransitionManager.Instance().Transition("[3] Gameplay", transitionSettings, 0);
+            }
+            else
+            {
+                // The dialogue scene is finished...
+                // get the parent of the game object and set it to inactive
+                transform.parent.gameObject.SetActive(false);
+                model.player.controlEnabled = true;
+                model.hudCanvas.SetActive(true);
+            }
         }
     }
 
