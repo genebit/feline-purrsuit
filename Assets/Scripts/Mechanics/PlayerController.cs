@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.UI;
+using static Core.Simulation;
 
 namespace Mechanic
 {
@@ -8,17 +10,32 @@ namespace Mechanic
         [Range(0, 5f)]
         public float moveSpeed = 2.5f;
 
-        [Range(0, 5f)]
-        public float sprintSpeed = 3.5f;
-        public bool controlEnabled;
+        [HideInInspector]
+        public float originalSpeed;
 
-        public ParticleSystem dustParticle;
-        public GameObject actionPrompt;
+        [Range(0, 5f)]
+        [Header("Sprinting")]
+        public float sprintSpeed = 3.5f;
+
+        public Slider staminaSlider;
+        [Range(0, 50f)]
+        public float decreaseSpeed = 25f;
+        [Range(0, 50f)]
+        public float recoverySpeed = 25f;
+
+        public UIOpacity background;
+        public UIOpacity fill;
 
         [Header("Attack")]
         [SerializeField]
         [Range(0, 10f)]
         private float attackRadius = 2f;
+
+        public bool controlEnabled;
+
+        public ParticleSystem dustParticle;
+        public GameObject actionPrompt;
+
         #endregion
 
         private Rigidbody2D rb;
@@ -26,6 +43,7 @@ namespace Mechanic
         private void Start()
         {
             rb = GetComponent<Rigidbody2D>();
+            originalSpeed = moveSpeed;
         }
 
         private void Update()
@@ -40,7 +58,7 @@ namespace Mechanic
                 Move(horizontalInput, verticalInput);
 
                 // Sprint handling
-                Sprint();
+                Schedule<PlayerSprint>();
 
                 // Catch attack
                 if (Input.GetMouseButtonDown(0))
@@ -57,34 +75,18 @@ namespace Mechanic
         {
             Vector2 movement = new Vector2(moveHorizontal, moveVertical).normalized * moveSpeed * Time.deltaTime;
             rb.MovePosition(rb.position + movement);
-            HandleDustParticle(movement);
+
+            // handle dust effect when walking
+            var ev = Schedule<PlayerWalkDustEffect>();
+            ev.movement = movement;
         }
 
-        private void HandleDustParticle(Vector2 movement)
+        public void ToggleControl(bool value)
         {
-            if (movement != Vector2.zero)
-            {
-                dustParticle.Play();
-            }
-            else
-            {
-                dustParticle.Stop();
-            }
+            controlEnabled = value;
         }
 
-        private void Sprint()
-        {
-            if (Input.GetKeyDown(KeyCode.LeftShift))
-            {
-                moveSpeed = Mathf.Lerp(moveSpeed, sprintSpeed, 1f);
-            }
-            else if (Input.GetKeyUp(KeyCode.LeftShift))
-            {
-                moveSpeed = 2.5f;
-            }
-        }
-
-        void OnDrawGizmosSelected()
+        private void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.yellow;
             Gizmos.DrawWireSphere(transform.position, attackRadius);

@@ -2,28 +2,31 @@ using Core;
 using Model;
 using UnityEngine;
 
-public class ActionPromptController : MonoBehaviour
+namespace Mechanic
 {
-    [SerializeField]
-    private TextTypewriter actionPromptText;
-    private GameObject actionPromptTextBackground;
-
-    private readonly IsoModel model = Simulation.GetModel<IsoModel>();
-
-    private void Start()
+    public class ActionPromptController : MonoBehaviour
     {
-        actionPromptTextBackground = transform.GetChild(0).gameObject;
-    }
+        [SerializeField]
+        private TextTypewriter actionPromptText;
+        private GameObject actionPromptTextBackground;
 
-    public void Prompt(string message)
-    {
-        actionPromptTextBackground.SetActive(true);
-        actionPromptText.fullText = message;
-        actionPromptText.PlayText();
-    }
+        private readonly IsoModel model = Simulation.GetModel<IsoModel>();
 
-    public void Close()
-    {
-        actionPromptTextBackground.SetActive(false);
+        private void Start()
+        {
+            actionPromptTextBackground = transform.GetChild(0).gameObject;
+        }
+
+        public void Prompt(string message)
+        {
+            actionPromptTextBackground.SetActive(true);
+            actionPromptText.fullText = message;
+            actionPromptText.PlayText();
+        }
+
+        public void Close()
+        {
+            actionPromptTextBackground.SetActive(false);
+        }
     }
 }

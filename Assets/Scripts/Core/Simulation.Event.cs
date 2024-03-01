@@ -1,5 +1,4 @@
-﻿
-namespace Core
+﻿namespace Core
 {
     public static partial class Simulation
     {
@@ -51,6 +50,8 @@ namespace Core
 
             internal override void ExecuteEvent()
             {
+                UnityEngine.Debug.Log("sim.event");
+
                 if (Precondition())
                 {
                     Execute();

@@ -2,26 +2,29 @@ using Core;
 using Model;
 using UnityEngine;
 
-public class NPCSmallTalkOnEnteredController : MonoBehaviour
+namespace Mechanic
 {
-    [SerializeField]
-    private string dialogue;
-
-    private readonly IsoModel model = Simulation.GetModel<IsoModel>();
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    public class NPCSmallTalkOnEnteredController : MonoBehaviour
     {
-        if (collision.gameObject.CompareTag("Player"))
+        [SerializeField]
+        private string dialogue;
+
+        private readonly IsoModel model = Simulation.GetModel<IsoModel>();
+
+        private void OnTriggerEnter2D(Collider2D collision)
         {
-            gameObject.GetComponentInChildren<ActionPromptController>().Prompt(dialogue);
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                gameObject.GetComponentInChildren<ActionPromptController>().Prompt(dialogue);
+            }
         }
-    }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
+        private void OnTriggerExit2D(Collider2D collision)
         {
-            gameObject.GetComponentInChildren<ActionPromptController>().Close();
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                gameObject.GetComponentInChildren<ActionPromptController>().Close();
+            }
         }
     }
 }

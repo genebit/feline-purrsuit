@@ -1,41 +1,44 @@
 using TMPro;
 using UnityEngine;
 
-public class FormController : MonoBehaviour
+namespace Mechanic
 {
-    [SerializeField]
-    private GameObject formCanvas;
-
-    [SerializeField]
-    private GameObject dialogueCanvas;
-
-    [SerializeField]
-    private TMP_InputField inputfield;
-
-    private void Update()
+    public class FormController : MonoBehaviour
     {
-        if (Input.GetKeyDown(KeyCode.Return))
+        [SerializeField]
+        private GameObject formCanvas;
+
+        [SerializeField]
+        private GameObject dialogueCanvas;
+
+        [SerializeField]
+        private TMP_InputField inputfield;
+
+        private void Update()
         {
-            Submit();
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                Submit();
+            }
         }
-    }
 
-    public void RandomizeName()
-    {
-        string[] randomNames = { "Bubbles", "Whiskers", "Bob", "Boomer", "Dizzy", "Doodle", "Bongo", "Tom", "Darren", "Karen", "Weeboo", "Borgor", "Gene" };
-        inputfield.text = randomNames[Random.Range(0, randomNames.Length)];
-    }
-
-    public void Submit()
-    {
-        // Form validation
-        if (inputfield.text.Trim().Length != 0)
+        public void RandomizeName()
         {
-            // Store it into player prefs
-            PlayerPrefs.SetString("PlayerName", inputfield.text);
+            string[] randomNames = { "Bubbles", "Whiskers", "Bob", "Boomer", "Dizzy", "Doodle", "Bongo", "Tom", "Darren", "Karen", "Weeboo", "Borgor", "Gene" };
+            inputfield.text = randomNames[Random.Range(0, randomNames.Length)];
+        }
 
-            formCanvas.SetActive(false);
-            dialogueCanvas.SetActive(true);
+        public void Submit()
+        {
+            // Form validation
+            if (inputfield.text.Trim().Length != 0)
+            {
+                // Store it into player prefs
+                PlayerPrefs.SetString("PlayerName", inputfield.text);
+
+                formCanvas.SetActive(false);
+                dialogueCanvas.SetActive(true);
+            }
         }
     }
 }

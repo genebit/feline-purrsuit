@@ -70,7 +70,7 @@ namespace Core
             while (pos > startpos)
             {
                 //find parent index in binary tree
-                var parentpos = pos - 1 >> 1;
+                var parentpos = (pos - 1) >> 1;
                 var parent = items[parentpos];
                 //if new item precedes or equal to parent, pos is new item position.
                 if (Compare(parent, newitem) <= 0)
