@@ -50,8 +50,6 @@
 
             internal override void ExecuteEvent()
             {
-                UnityEngine.Debug.Log("sim.event");
-
                 if (Precondition())
                 {
                     Execute();

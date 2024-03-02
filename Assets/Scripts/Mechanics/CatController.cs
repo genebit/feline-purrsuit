@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Mechanic
 {
-    public class AnimalController : MonoBehaviour
+    public class CatController : MonoBehaviour
     {
         [SerializeField]
         [Range(0, 10f)]

@@ -532,7 +532,7 @@ MonoBehaviour:
   recoverySpeed: 25
   background: {fileID: 538848815}
   fill: {fileID: 383519343}
-  attackRadius: 0.46
+  attackRadius: 0.45
   controlEnabled: 0
   dustParticle: {fileID: 7593743126767175625}
   actionPrompt: {fileID: 5842095460416439609}

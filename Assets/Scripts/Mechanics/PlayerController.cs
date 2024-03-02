@@ -1,3 +1,4 @@
+using Gameplay;
 using UnityEngine;
 using UnityEngine.UI;
 using static Core.Simulation;
@@ -13,6 +14,7 @@ namespace Mechanic
         [HideInInspector]
         public float originalSpeed;
 
+        #region Sprinting
         [Range(0, 5f)]
         [Header("Sprinting")]
         public float sprintSpeed = 3.5f;
@@ -25,17 +27,18 @@ namespace Mechanic
 
         public UIOpacity background;
         public UIOpacity fill;
+        #endregion
 
+        #region Attack
         [Header("Attack")]
-        [SerializeField]
-        [Range(0, 10f)]
-        private float attackRadius = 2f;
+        [Range(0, 1f)]
+        public float attackRadius;
 
         public bool controlEnabled;
 
         public ParticleSystem dustParticle;
         public GameObject actionPrompt;
-
+        #endregion
         #endregion
 
         private Rigidbody2D rb;
@@ -63,10 +66,8 @@ namespace Mechanic
                 // Catch attack
                 if (Input.GetMouseButtonDown(0))
                 {
-                    Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                    mousePosition.z = 0;
-                    Vector3 attackDir = (mousePosition - transform.position).normalized;
-                    Debug.Log(attackDir.ToString());
+                    var ev = Schedule<PlayerCatchRadius>();
+                    ev.player = this;
                 }
             }
         }

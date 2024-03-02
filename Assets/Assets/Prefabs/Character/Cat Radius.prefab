@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 972140239772991877}
   - component: {fileID: 7165621122590934837}
   m_Layer: 0
-  m_Name: Sprite
+  m_Name: Cat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 972140240287268096}
   - component: {fileID: 972140240287268103}
   m_Layer: 0
-  m_Name: Cat
+  m_Name: Cat Radius
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
