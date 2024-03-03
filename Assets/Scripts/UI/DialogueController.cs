@@ -23,6 +23,11 @@ public class DialogueController : MonoBehaviour
 
     [SerializeField]
     private TransitionSettings transitionSettings;
+
+    [SerializeField]
+    private UIOpacity avatar1;
+    [SerializeField]
+    private UIOpacity avatar2;
     #endregion
 
     private string[] speakerNames;
@@ -145,14 +150,26 @@ public class DialogueController : MonoBehaviour
     void SetSpeakerName()
     {
         heading.text = speakerNames[index];
+
+        if (speakerNames[index].Equals(playerName.ToUpper()))
+        {
+            avatar1.SetOpacity(1);
+            // gradually transition the opacity from 1 to 0.5f of avatar2
+            avatar2.SetOpacity(0.5f);
+        }
+        else
+        {
+            avatar1.SetOpacity(0.5f);
+            avatar2.SetOpacity(1);
+        }
     }
 
     void RemovePlayerNameOnDialogue()
     {
         // remove the player's name from the dialogue if it's the player's turn to speak
-        if (speakerNames[index].Equals(PlayerPrefs.GetString("PlayerName").ToUpper()))
+        if (speakerNames[index].Equals(playerName.ToUpper()))
         {
-            lines[index] = lines[index].Replace(PlayerPrefs.GetString("PlayerName"), string.Empty).Trim();
+            lines[index] = lines[index].Replace(playerName, string.Empty).Trim();
         }
     }
 }

@@ -42,10 +42,13 @@ namespace Mechanic
         #endregion
 
         private Rigidbody2D rb;
+        private Vector2 movement;
+        internal SpriteRenderer spriteRenderer;
 
         private void Start()
         {
             rb = GetComponent<Rigidbody2D>();
+            spriteRenderer = GetComponent<SpriteRenderer>();
             originalSpeed = moveSpeed;
         }
 
@@ -69,12 +72,28 @@ namespace Mechanic
                     var ev = Schedule<PlayerCatchRadius>();
                     ev.player = this;
                 }
+
+                FlipSprite();
+            }
+        }
+
+        private void FlipSprite()
+        {
+            if (movement.x > 0)
+            {
+                // flip sprite to the right
+                spriteRenderer.flipX = false;
+            }
+            else if (movement.x < 0)
+            {
+                // flip sprite to the left
+                spriteRenderer.flipX = true;
             }
         }
 
         private void Move(float moveHorizontal, float moveVertical)
         {
-            Vector2 movement = new Vector2(moveHorizontal, moveVertical).normalized * moveSpeed * Time.deltaTime;
+            movement = new Vector2(moveHorizontal, moveVertical).normalized * moveSpeed * Time.deltaTime;
             rb.MovePosition(rb.position + movement);
 
             // handle dust effect when walking

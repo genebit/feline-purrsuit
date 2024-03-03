@@ -7674,6 +7674,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Cat
       objectReference: {fileID: 0}
+    - target: {fileID: 972140239772991876, guid: dcce7dd7e645b8a43aab4ff5b47a506d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ad40c9e8e18d390428ff692b9c39a739, type: 3}
     - target: {fileID: 972140240287268096, guid: dcce7dd7e645b8a43aab4ff5b47a506d, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -7721,6 +7725,10 @@ PrefabInstance:
     - target: {fileID: 972140240287268097, guid: dcce7dd7e645b8a43aab4ff5b47a506d, type: 3}
       propertyPath: m_Name
       value: Cat Radius
+      objectReference: {fileID: 0}
+    - target: {fileID: 972140240287268103, guid: dcce7dd7e645b8a43aab4ff5b47a506d, type: 3}
+      propertyPath: catType
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 972140240287268103, guid: dcce7dd7e645b8a43aab4ff5b47a506d, type: 3}
       propertyPath: m_Enabled

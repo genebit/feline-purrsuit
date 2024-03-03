@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 972140239772991876}
   - component: {fileID: 972140239772991877}
   - component: {fileID: 7165621122590934837}
+  - component: {fileID: 8718243986590850273}
   m_Layer: 0
   m_Name: Cat
   m_TagString: Untagged
@@ -123,6 +124,28 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &8718243986590850273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 972140239772991872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 652d34066fe2e24488f2247b597d7d11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  power: 0.04
+  jigPosition: 0
+  positionJigAmount: {x: 0, y: 0, z: 0}
+  positionFrequency: 10
+  jigRotation: 1
+  rotationJigAmount: {x: 0, y: 0, z: 0}
+  rotationFrequency: 10
+  jigScale: 1
+  scaleJigAmount: {x: 0.1, y: -0.1, z: 0.1}
+  scaleFrequency: 10
 --- !u!1 &972140240287268097
 GameObject:
   m_ObjectHideFlags: 0
