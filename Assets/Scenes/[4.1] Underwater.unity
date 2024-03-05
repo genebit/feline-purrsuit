@@ -1057,7 +1057,9 @@ GameObject:
   m_Component:
   - component: {fileID: 310367458}
   - component: {fileID: 310367459}
+  - component: {fileID: 310367461}
   - component: {fileID: 310367460}
+  - component: {fileID: 310367462}
   m_Layer: 0
   m_Name: Boat (1)
   m_TagString: Untagged
@@ -1073,7 +1075,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 310367457}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -27.355, y: 5.92, z: 0}
+  m_LocalPosition: {x: -27.16, y: 5.92, z: 0}
   m_LocalScale: {x: 0.38541853, y: 0.38541853, z: 0.38541853}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1147,6 +1149,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   path: {fileID: 694509359}
   speed: 1
+--- !u!61 &310367461
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310367457}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.81, y: 2.25}
+    newSize: {x: 3.81, y: 2.25}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.81, y: 2.25}
+  m_EdgeRadius: 0
+--- !u!114 &310367462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310367457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9763f2780e68c742bfa0c9b3630b0c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transitionSettings: {fileID: 11400000, guid: 5d42ad7319df4a8439d74d82f30a60cc, type: 2}
+  promptMessage: Press E to return home.
+  transitionTo: '[3] Gameplay'
 --- !u!114 &342530292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2049,7 +2092,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -1e-45, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -28.1, y: 7.39, z: -10}
+  m_LocalPosition: {x: -28.42, y: 7.397, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2336,7 +2379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 652d34066fe2e24488f2247b597d7d11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 0.013
+  power: 0.118
   jigPosition: 0
   positionJigAmount: {x: 0, y: 0, z: 0}
   positionFrequency: 10
@@ -2372,7 +2415,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 583812666}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -28.1, y: 7.39, z: 0}
+  m_LocalPosition: {x: -28.42, y: 7.39, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -29808,7 +29851,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1467750231}
   m_LocalRotation: {x: -1e-45, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -28.1, y: 7.39, z: -10}
+  m_LocalPosition: {x: -28.42, y: 7.397, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -30883,7 +30926,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1808545571}
   - component: {fileID: 1808545572}
+  - component: {fileID: 1808545574}
   - component: {fileID: 1808545573}
+  - component: {fileID: 1808545575}
   m_Layer: 0
   m_Name: Boat (3)
   m_TagString: Untagged
@@ -30973,6 +31018,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   path: {fileID: 2074822744}
   speed: 1
+--- !u!61 &1808545574
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1808545570}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.81, y: 2.25}
+    newSize: {x: 3.81, y: 2.25}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.81, y: 2.25}
+  m_EdgeRadius: 0
+--- !u!114 &1808545575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1808545570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9763f2780e68c742bfa0c9b3630b0c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transitionSettings: {fileID: 11400000, guid: 5d42ad7319df4a8439d74d82f30a60cc, type: 2}
+  promptMessage: Press E to return home.
+  transitionTo: '[3] Gameplay'
 --- !u!1 &1821628458
 GameObject:
   m_ObjectHideFlags: 0
@@ -32132,7 +32218,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2034770073}
   - component: {fileID: 2034770074}
+  - component: {fileID: 2034770076}
   - component: {fileID: 2034770075}
+  - component: {fileID: 2034770077}
   m_Layer: 0
   m_Name: Boat (2)
   m_TagString: Untagged
@@ -32222,6 +32310,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   path: {fileID: 779478225}
   speed: 1
+--- !u!61 &2034770076
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2034770072}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.81, y: 2.25}
+    newSize: {x: 3.81, y: 2.25}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.81, y: 2.25}
+  m_EdgeRadius: 0
+--- !u!114 &2034770077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2034770072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9763f2780e68c742bfa0c9b3630b0c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transitionSettings: {fileID: 11400000, guid: 5d42ad7319df4a8439d74d82f30a60cc, type: 2}
+  promptMessage: Press E to return home.
+  transitionTo: '[3] Gameplay'
 --- !u!1 &2070551509
 GameObject:
   m_ObjectHideFlags: 0
@@ -33069,8 +33198,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5842095459781961041}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.20217521, y: 0.20217521, z: 0.20217521}
+  m_LocalPosition: {x: 0, y: 0.007, z: 0}
+  m_LocalScale: {x: 0.027497135, y: 0.027497135, z: 0.027497135}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7593743125011650939}
@@ -33677,7 +33806,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 5
+    maxNumParticles: 10
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
     rotation3D: 0
@@ -33943,7 +34072,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 7
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -34211,10 +34340,10 @@ ParticleSystem:
         m_RotationOrder: 4
     separateAxes: 0
   RotationModule:
-    enabled: 0
+    enabled: 1
     x:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -34267,7 +34396,7 @@ ParticleSystem:
         m_RotationOrder: 4
     y:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -34320,8 +34449,8 @@ ParticleSystem:
         m_RotationOrder: 4
     curve:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 0.7853982
+      minMaxState: 3
+      scalar: -0.7853981
       minScalar: 0.7853982
       maxCurve:
         serializedVersion: 2
@@ -34558,7 +34687,7 @@ ParticleSystem:
     uvChannelMask: -1
     rowMode: 1
     sprites:
-    - sprite: {fileID: 21300000, guid: 8142b3efe82b5904397d3e29ec3e5a1e, type: 3}
+    - sprite: {fileID: 21300000, guid: ac0b0c0271ed4a74f94be598bc7c9b5d, type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:
@@ -36459,10 +36588,10 @@ ParticleSystem:
     range: {x: 0, y: 1}
     separateAxes: 0
   RotationBySpeedModule:
-    enabled: 0
+    enabled: 1
     x:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -36515,7 +36644,7 @@ ParticleSystem:
         m_RotationOrder: 4
     y:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -36568,8 +36697,8 @@ ParticleSystem:
         m_RotationOrder: 4
     curve:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 0.7853982
+      minMaxState: 3
+      scalar: 1.5707963
       minScalar: 0.7853982
       maxCurve:
         serializedVersion: 2
@@ -37824,7 +37953,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7593743125011650936}
   m_LocalRotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
-  m_LocalPosition: {x: -0.04, y: -1.2, z: 0}
+  m_LocalPosition: {x: -1.29, y: -10.26, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
