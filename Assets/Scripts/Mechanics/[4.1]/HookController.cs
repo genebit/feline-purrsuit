@@ -1,10 +1,16 @@
+using Core;
+using Gameplay;
+using Mechanics;
+using Model;
 using UnityEngine;
+using static Core.Simulation;
 
 public class HookController : MonoBehaviour
 {
     [Range(0f, 20f)]
     public float speed = 8f;
     private Vector2 initialBulletDirection;
+    private readonly IsoModel model = Simulation.GetModel<IsoModel>();
 
     public void SetInitialBulletDirection(Vector2 direction)
     {
@@ -18,6 +24,15 @@ public class HookController : MonoBehaviour
 
         // Destroy the bullet if it goes off-screen
         if (!IsVisible()) Destroy(gameObject);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Fish"))
+        {
+            var ev = Schedule<CaughtFish>();
+            ev.fish = collision.gameObject.GetComponent<FishController>();
+        }
     }
 
     private bool IsVisible()

@@ -1,4 +1,5 @@
 ﻿using Mechanic;
+using Mechanics;
 using UnityEngine;
 
 namespace Model
@@ -9,6 +10,8 @@ namespace Model
         public Cinemachine.CinemachineVirtualCamera virtualCamera;
 
         public PlayerController player;
+
+        public InventoryController inventory;
 
         public ActionPromptController playerActionPrompt;
 
