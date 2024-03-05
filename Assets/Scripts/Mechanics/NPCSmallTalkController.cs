@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Mechanic
 {
-    public class NPCSmallTalkOnEnteredController : MonoBehaviour
+    public class NPCSmallTalkController : MonoBehaviour
     {
         [SerializeField]
         private string dialogue;

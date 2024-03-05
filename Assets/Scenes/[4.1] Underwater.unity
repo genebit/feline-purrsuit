@@ -546,8 +546,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveRadius: 1.76
-  moveSpeed: 0.5
-  speedIncreasePercentage: 0.25
+  moveSpeed: 0.75
+  speedIncreasePercentage: 0.75
   animal: {fileID: 486464051}
 --- !u!1 &117620244
 GameObject:
@@ -1140,8 +1140,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveRadius: 1.76
-  moveSpeed: 0.5
-  speedIncreasePercentage: 0.25
+  moveSpeed: 0.75
+  speedIncreasePercentage: 0.75
   animal: {fileID: 962062291}
 --- !u!1 &203676174
 GameObject:
@@ -2252,8 +2252,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveRadius: 1.76
-  moveSpeed: 0.5
-  speedIncreasePercentage: 0.25
+  moveSpeed: 0.75
+  speedIncreasePercentage: 0.75
   animal: {fileID: 1714609115}
 --- !u!1 &428631786
 GameObject:
@@ -2301,8 +2301,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveRadius: 1.76
-  moveSpeed: 0.5
-  speedIncreasePercentage: 0.25
+  moveSpeed: 0.75
+  speedIncreasePercentage: 0.75
   animal: {fileID: 939872492}
 --- !u!1 &467795335
 GameObject:
@@ -2595,8 +2595,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveRadius: 1.76
-  moveSpeed: 0.5
-  speedIncreasePercentage: 0.25
+  moveSpeed: 0.75
+  speedIncreasePercentage: 0.75
   animal: {fileID: 470637760}
 --- !u!1001 &485310553
 PrefabInstance:
@@ -2990,8 +2990,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveRadius: 1.76
-  moveSpeed: 0.5
-  speedIncreasePercentage: 0.25
+  moveSpeed: 0.75
+  speedIncreasePercentage: 0.75
   animal: {fileID: 1805804260}
 --- !u!1 &519420028
 GameObject:
@@ -9282,8 +9282,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveRadius: 1.76
-  moveSpeed: 0.5
-  speedIncreasePercentage: 0.25
+  moveSpeed: 0.75
+  speedIncreasePercentage: 0.75
   animal: {fileID: 1637606476}
 --- !u!1 &729909249
 GameObject:
@@ -19736,8 +19736,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveRadius: 1.76
-  moveSpeed: 0.5
-  speedIncreasePercentage: 0.25
+  moveSpeed: 0.75
+  speedIncreasePercentage: 0.75
   animal: {fileID: 1994015197}
 --- !u!1 &994592895
 GameObject:
@@ -19903,8 +19903,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveRadius: 1.76
-  moveSpeed: 0.5
-  speedIncreasePercentage: 0.25
+  moveSpeed: 0.75
+  speedIncreasePercentage: 0.75
   animal: {fileID: 1402648203}
 --- !u!1 &1003764620
 GameObject:
@@ -26344,8 +26344,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveRadius: 1.76
-  moveSpeed: 0.5
-  speedIncreasePercentage: 0.25
+  moveSpeed: 0.75
+  speedIncreasePercentage: 0.75
   animal: {fileID: 1769313879}
 --- !u!1 &1244668914
 GameObject:
@@ -26393,8 +26393,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveRadius: 1.76
-  moveSpeed: 0.5
-  speedIncreasePercentage: 0.25
+  moveSpeed: 0.75
+  speedIncreasePercentage: 0.75
   animal: {fileID: 1114303798}
 --- !u!1 &1284374270
 GameObject:
@@ -26965,8 +26965,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveRadius: 1.76
-  moveSpeed: 0.5
-  speedIncreasePercentage: 0.25
+  moveSpeed: 0.75
+  speedIncreasePercentage: 0.75
   animal: {fileID: 132723586}
 --- !u!1 &1431894610
 GameObject:
@@ -32799,8 +32799,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveRadius: 1.76
-  moveSpeed: 0.5
-  speedIncreasePercentage: 0.25
+  moveSpeed: 0.75
+  speedIncreasePercentage: 0.75
   animal: {fileID: 1934837511}
 --- !u!1 &1637606476
 GameObject:
@@ -33092,8 +33092,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveRadius: 1.76
-  moveSpeed: 0.5
-  speedIncreasePercentage: 0.25
+  moveSpeed: 0.75
+  speedIncreasePercentage: 0.75
   animal: {fileID: 1109525209}
 --- !u!1 &1670812830
 GameObject:
@@ -33403,8 +33403,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveRadius: 1.76
-  moveSpeed: 0.5
-  speedIncreasePercentage: 0.25
+  moveSpeed: 0.75
+  speedIncreasePercentage: 0.75
   animal: {fileID: 1181504964}
 --- !u!1 &1700569478
 GameObject:
@@ -33452,8 +33452,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveRadius: 1.76
-  moveSpeed: 0.5
-  speedIncreasePercentage: 0.25
+  moveSpeed: 0.75
+  speedIncreasePercentage: 0.75
   animal: {fileID: 1641051428}
 --- !u!1 &1714609115
 GameObject:
@@ -33936,8 +33936,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveRadius: 1.76
-  moveSpeed: 0.5
-  speedIncreasePercentage: 0.25
+  moveSpeed: 0.75
+  speedIncreasePercentage: 0.75
   animal: {fileID: 994592895}
 --- !u!1 &1800471877
 GameObject:
@@ -34283,8 +34283,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveRadius: 1.76
-  moveSpeed: 0.5
-  speedIncreasePercentage: 0.25
+  moveSpeed: 0.75
+  speedIncreasePercentage: 0.75
   animal: {fileID: 1670812830}
 --- !u!1 &1821628458
 GameObject:
@@ -34655,8 +34655,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveRadius: 1.76
-  moveSpeed: 0.5
-  speedIncreasePercentage: 0.25
+  moveSpeed: 0.75
+  speedIncreasePercentage: 0.75
   animal: {fileID: 1313423512}
 --- !u!1 &1869324817
 GameObject:
@@ -34704,8 +34704,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveRadius: 1.76
-  moveSpeed: 0.5
-  speedIncreasePercentage: 0.25
+  moveSpeed: 0.75
+  speedIncreasePercentage: 0.75
   animal: {fileID: 729909249}
 --- !u!1 &1869515160
 GameObject:
@@ -34829,8 +34829,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveRadius: 1.76
-  moveSpeed: 0.5
-  speedIncreasePercentage: 0.25
+  moveSpeed: 0.75
+  speedIncreasePercentage: 0.75
   animal: {fileID: 6922144}
 --- !u!198 &1897899723 stripped
 ParticleSystem:
@@ -35285,8 +35285,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveRadius: 1.76
-  moveSpeed: 0.5
-  speedIncreasePercentage: 0.25
+  moveSpeed: 0.75
+  speedIncreasePercentage: 0.75
   animal: {fileID: 718423900}
 --- !u!1 &1934837511
 GameObject:
@@ -35418,8 +35418,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveRadius: 1.76
-  moveSpeed: 0.5
-  speedIncreasePercentage: 0.25
+  moveSpeed: 0.75
+  speedIncreasePercentage: 0.75
   animal: {fileID: 253421635}
 --- !u!1 &1955439798
 GameObject:
@@ -35467,8 +35467,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveRadius: 1.76
-  moveSpeed: 0.5
-  speedIncreasePercentage: 0.25
+  moveSpeed: 0.75
+  speedIncreasePercentage: 0.75
   animal: {fileID: 500526158}
 --- !u!1 &1959775453
 GameObject:
@@ -35651,8 +35651,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveRadius: 1.76
-  moveSpeed: 0.5
-  speedIncreasePercentage: 0.25
+  moveSpeed: 0.75
+  speedIncreasePercentage: 0.75
   animal: {fileID: 1003764620}
 --- !u!1 &1994015197
 GameObject:
@@ -36219,8 +36219,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveRadius: 1.76
-  moveSpeed: 0.5
-  speedIncreasePercentage: 0.25
+  moveSpeed: 0.75
+  speedIncreasePercentage: 0.75
   animal: {fileID: 1457313738}
 --- !u!1 &2070551509
 GameObject:
@@ -36678,8 +36678,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveRadius: 1.76
-  moveSpeed: 0.5
-  speedIncreasePercentage: 0.25
+  moveSpeed: 0.75
+  speedIncreasePercentage: 0.75
   animal: {fileID: 157077}
 --- !u!1 &2123792227
 GameObject:
@@ -36727,8 +36727,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveRadius: 1.76
-  moveSpeed: 0.5
-  speedIncreasePercentage: 0.25
+  moveSpeed: 0.75
+  speedIncreasePercentage: 0.75
   animal: {fileID: 1093455961}
 --- !u!1 &2131101819
 GameObject:
@@ -36776,8 +36776,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveRadius: 1.76
-  moveSpeed: 0.5
-  speedIncreasePercentage: 0.25
+  moveSpeed: 0.75
+  speedIncreasePercentage: 0.75
   animal: {fileID: 1910399261}
 --- !u!1001 &659232389911263389
 PrefabInstance:
