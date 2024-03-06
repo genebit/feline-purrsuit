@@ -563,11 +563,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa429060118b2864d9adbf8f534ee3ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
+  moveSpeed: 0.75
   originalSpeed: 0
-  sprintSpeed: 3
+  sprintSpeed: 1.25
   staminaSlider: {fileID: 1558733839}
-  decreaseSpeed: 25
+  decreaseSpeed: 35
   recoverySpeed: 25
   background: {fileID: 538848815}
   fill: {fileID: 383519343}

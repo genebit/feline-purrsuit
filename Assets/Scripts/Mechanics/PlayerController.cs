@@ -94,7 +94,7 @@ namespace Mechanics
 
         private void Move(float moveHorizontal, float moveVertical)
         {
-            movement = new Vector2(moveHorizontal, moveVertical).normalized * moveSpeed * Time.deltaTime;
+            movement = new Vector2(moveHorizontal, moveVertical).normalized * moveSpeed * Time.fixedDeltaTime;
             rb.MovePosition(rb.position + movement);
 
             // handle dust effect when walking
