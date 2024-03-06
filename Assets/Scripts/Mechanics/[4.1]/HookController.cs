@@ -7,8 +7,8 @@ namespace Mechanics
 {
     public class HookController : MonoBehaviour
     {
-        [Range(0f, 20f)]
-        public float speed = 8f;
+        [HideInInspector]
+        public float speed;
         private Vector2 initialBulletDirection;
         private readonly IsoModel model = GetModel<IsoModel>();
 

@@ -11,7 +11,7 @@ namespace Mechanics
         [SerializeField] private SpriteRenderer playerSpriteRenderer;
         private Rigidbody2D playerRb;
 
-        [Range(0f, 100f)]
+        [Range(0f, 10f)]
         [SerializeField] private float bulletSpeed;
 
         [Range(0f, 100f)]
@@ -45,6 +45,7 @@ namespace Mechanics
                 GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
                 var controller = bullet.GetComponent<HookController>();
                 controller.SetInitialBulletDirection(shootDirection);
+                controller.speed = bulletSpeed;
 
                 playerRb.AddForce(-shootDirection.normalized * knockbackStrength, ForceMode2D.Impulse);
             }

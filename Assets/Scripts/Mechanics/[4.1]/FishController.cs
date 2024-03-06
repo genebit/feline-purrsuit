@@ -12,21 +12,43 @@ namespace Mechanics
     public class FishController : MonoBehaviour
     {
         public FishType fishType;
+        private SpriteRenderer spriteRenderer;
 
         private void Start()
         {
-            // randomize the fish type. the white fish is the most common with 50% chance,
-            // the triangle fish is uncommon with 30% chance, and
-            // the gold fish is rare with 20% chance
+            spriteRenderer = GetComponent<SpriteRenderer>();
+
+            // randomize the fish type. the white fish is the most common with 70% chance,
+            // the triangle fish is uncommon with 20% chance, and
+            // the gold fish is rare with 10% chance
 
             int random = Random.Range(0, 100);
 
-            if (random < 50)
+            if (random < 70)
                 fishType = FishType.WhiteFish;
-            else if (random < 80)
+            else if (random < 90)
                 fishType = FishType.TriangleFish;
             else
                 fishType = FishType.GoldFish;
+
+            // Set the fish sprite
+            SetFishSprite();
+        }
+
+        private void SetFishSprite()
+        {
+            switch (fishType)
+            {
+                case FishType.WhiteFish:
+                    spriteRenderer.sprite = Resources.Load<Sprite>("Characters/Fishes/white-fish");
+                    break;
+                case FishType.TriangleFish:
+                    spriteRenderer.sprite = Resources.Load<Sprite>("Characters/Fishes/triangle-fish");
+                    break;
+                case FishType.GoldFish:
+                    spriteRenderer.sprite = Resources.Load<Sprite>("Characters/Fishes/gold-fish");
+                    break;
+            }
         }
 
         // When the fish is caught by the hook
