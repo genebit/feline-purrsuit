@@ -1,21 +1,33 @@
+using EasyTransition;
+using Gameplay;
 using UnityEngine;
 using UnityEngine.UI;
+using Utils;
+using static Core.Simulation;
 
 namespace Mechanics
 {
     public class PlayerDivingController : MonoBehaviour
     {
-        [Range(0f, 20f)]
-        public float moveSpeed;
-        [Range(0f, 20f)]
-        public float floatForce;
+        #region Inspector View
         public GameObject player;
         [Range(0f, 20f)]
-        public float staminaDecrease;
-
+        public float moveSpeed;
+        [Header("Stamina")]
         public Slider staminaSlider;
+        [Range(0f, 20f)] public float floatForce;
+        [Range(0f, 20f)] public float staminaDecrease;
+        public bool isUnderwater;
+        public bool isDead;
 
-        public bool isBreathing;
+        /// <summary>
+        /// This is for when the player stamina reaches 0. Game Over.
+        /// </summary>
+        [Header("Game Over")]
+        [StringInList(typeof(PropertyDrawersHelper), "AllSceneNames")]
+        public string transitionTo;
+        public TransitionSettings transitionSettings;
+        #endregion
 
         private SpriteRenderer playerSpriteRenderer;
         private Rigidbody2D rb;
@@ -38,7 +50,7 @@ namespace Mechanics
 
             FlipSprite(rb.velocity);
 
-            if (!isBreathing)
+            if (!isUnderwater && !isDead)
             {
                 // Floating control
                 if (Input.GetKey(KeyCode.Space))
@@ -48,6 +60,13 @@ namespace Mechanics
 
                 staminaSlider.value -= Time.deltaTime * staminaDecrease;
                 staminaSlider.value = Mathf.Clamp(staminaSlider.value, 0f, 100f);
+
+                if (staminaSlider.value == 0)
+                {
+                    isDead = true;
+                    var ev = Schedule<PlayerDied>();
+                    ev.player = this;
+                }
             }
         }
 
@@ -73,7 +92,7 @@ namespace Mechanics
 
         public void SetIsBreathing(bool value)
         {
-            isBreathing = value;
+            isUnderwater = value;
         }
 
         private void OnTriggerEnter2D(Collider2D other)
