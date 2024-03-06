@@ -29,12 +29,14 @@ namespace Mechanics
                 fishType = FishType.GoldFish;
         }
 
+        // When the fish is caught by the hook
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.gameObject.CompareTag("Hook"))
             {
                 // Destroy the hook
                 Destroy(collision.gameObject);
+
                 // Destroy the fish container
                 Destroy(transform.parent.gameObject);
             }

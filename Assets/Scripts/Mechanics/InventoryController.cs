@@ -12,6 +12,14 @@ namespace Mechanics
         // rare
         public int goldFish = 0;
 
+        private void Start()
+        {
+            // Load the inventory from the player prefs
+            whiteFish = PlayerPrefs.GetInt("WhiteFish", 0);
+            triangleFish = PlayerPrefs.GetInt("TriangleFish", 0);
+            goldFish = PlayerPrefs.GetInt("GoldFish", 0);
+        }
+
         public void AddFishToInventory(FishType fishType)
         {
             switch (fishType)

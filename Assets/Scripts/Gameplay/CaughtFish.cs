@@ -11,7 +11,6 @@ namespace Gameplay
 
         public override void Execute()
         {
-            // TODO: Debug this why its not adding to the inventory
             model.inventory.AddFishToInventory(fish.fishType);
         }
     }
