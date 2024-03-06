@@ -2471,6 +2471,7 @@ MonoBehaviour:
   model:
     virtualCamera: {fileID: 1467750232}
     player: {fileID: 2070404788}
+    inventory: {fileID: 2070404790}
     playerActionPrompt: {fileID: 2070404789}
     hudCanvas: {fileID: 0}
 --- !u!4 &705466200
@@ -4920,6 +4921,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9b5c53e32d9758e4c943915c920f9ee8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2070404790 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1608528436606040940, guid: b521beb7dcb876046b65d048750ab558, type: 3}
+  m_PrefabInstance: {fileID: 2070404787}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0feabe57f78325d408076006c02ce83f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &2070404797 stripped
