@@ -3577,6 +3577,7 @@ MonoBehaviour:
   model:
     virtualCamera: {fileID: 1467750232}
     player: {fileID: 1939454020}
+    inventory: {fileID: 0}
     playerActionPrompt: {fileID: 749293268}
     hudCanvas: {fileID: 1900388014}
 --- !u!4 &705466200
@@ -4481,7 +4482,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 256, y: 256}
+  m_SizeDelta: {x: 310, y: 256}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &944729435
 MonoBehaviour:

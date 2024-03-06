@@ -26,10 +26,13 @@ public class PlayerDivingController : MonoBehaviour
 
     void Update()
     {
-        // Horizontal movement
-        float horizontalInput = Input.GetAxis("Horizontal");
-        Vector2 moveDirection = new Vector2(horizontalInput, 0f).normalized;
-        rb.velocity = new Vector2(moveDirection.x * moveSpeed, rb.velocity.y);
+        if (!Input.GetMouseButtonDown(0))
+        {
+            // Horizontal movement
+            float horizontalInput = Input.GetAxis("Horizontal");
+            Vector2 moveDirection = new Vector2(horizontalInput, 0f).normalized;
+            rb.velocity = new Vector2(moveDirection.x * moveSpeed, rb.velocity.y);
+        }
 
         FlipSprite(rb.velocity);
 
