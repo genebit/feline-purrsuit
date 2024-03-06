@@ -1,92 +1,95 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerDivingController : MonoBehaviour
+namespace Mechanics
 {
-    [Range(0f, 20f)]
-    public float moveSpeed;
-    [Range(0f, 20f)]
-    public float floatForce;
-    public GameObject player;
-    [Range(0f, 20f)]
-    public float staminaDecrease;
-
-    public Slider staminaSlider;
-
-    public bool isBreathing;
-
-    private SpriteRenderer playerSpriteRenderer;
-    private Rigidbody2D rb;
-
-    void Start()
+    public class PlayerDivingController : MonoBehaviour
     {
-        rb = GetComponent<Rigidbody2D>();
-        playerSpriteRenderer = player.GetComponent<SpriteRenderer>();
-    }
+        [Range(0f, 20f)]
+        public float moveSpeed;
+        [Range(0f, 20f)]
+        public float floatForce;
+        public GameObject player;
+        [Range(0f, 20f)]
+        public float staminaDecrease;
 
-    void Update()
-    {
-        if (!Input.GetMouseButtonDown(0))
+        public Slider staminaSlider;
+
+        public bool isBreathing;
+
+        private SpriteRenderer playerSpriteRenderer;
+        private Rigidbody2D rb;
+
+        void Start()
         {
-            // Horizontal movement
-            float horizontalInput = Input.GetAxis("Horizontal");
-            Vector2 moveDirection = new Vector2(horizontalInput, 0f).normalized;
-            rb.velocity = new Vector2(moveDirection.x * moveSpeed, rb.velocity.y);
+            rb = GetComponent<Rigidbody2D>();
+            playerSpriteRenderer = player.GetComponent<SpriteRenderer>();
         }
 
-        FlipSprite(rb.velocity);
-
-        if (!isBreathing)
+        void Update()
         {
-            // Floating control
-            if (Input.GetKey(KeyCode.Space))
+            if (!Input.GetMouseButtonDown(0))
             {
-                rb.AddForce(Vector2.up * floatForce * Time.deltaTime, ForceMode2D.Impulse);
+                // Horizontal movement
+                float horizontalInput = Input.GetAxis("Horizontal");
+                Vector2 moveDirection = new Vector2(horizontalInput, 0f).normalized;
+                rb.velocity = new Vector2(moveDirection.x * moveSpeed, rb.velocity.y);
             }
 
-            staminaSlider.value -= Time.deltaTime * staminaDecrease;
-            staminaSlider.value = Mathf.Clamp(staminaSlider.value, 0f, 100f);
-        }
-    }
+            FlipSprite(rb.velocity);
 
-    private void FlipSprite(Vector2 velocity)
-    {
-        if (velocity.x > 0)
-        {
-            // flip sprite to the right
-            playerSpriteRenderer.flipX = false;
-            player.transform.rotation = Quaternion.Euler(0, 0, -40);
-        }
-        else if (velocity.x < 0)
-        {
-            // flip sprite to the left
-            playerSpriteRenderer.flipX = true;
-            player.transform.rotation = Quaternion.Euler(0, 0, 40);
-        }
-        else
-        {
-            player.transform.rotation = Quaternion.Euler(0, 0, 0);
-        }
-    }
+            if (!isBreathing)
+            {
+                // Floating control
+                if (Input.GetKey(KeyCode.Space))
+                {
+                    rb.AddForce(Vector2.up * floatForce * Time.deltaTime, ForceMode2D.Impulse);
+                }
 
-    public void SetIsBreathing(bool value)
-    {
-        isBreathing = value;
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Water"))
-        {
-            rb.gravityScale = 0.1f;
+                staminaSlider.value -= Time.deltaTime * staminaDecrease;
+                staminaSlider.value = Mathf.Clamp(staminaSlider.value, 0f, 100f);
+            }
         }
-    }
 
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Water"))
+        private void FlipSprite(Vector2 velocity)
         {
-            rb.gravityScale = 0.75f;
+            if (velocity.x > 0)
+            {
+                // flip sprite to the right
+                playerSpriteRenderer.flipX = false;
+                player.transform.rotation = Quaternion.Euler(0, 0, -40);
+            }
+            else if (velocity.x < 0)
+            {
+                // flip sprite to the left
+                playerSpriteRenderer.flipX = true;
+                player.transform.rotation = Quaternion.Euler(0, 0, 40);
+            }
+            else
+            {
+                player.transform.rotation = Quaternion.Euler(0, 0, 0);
+            }
+        }
+
+        public void SetIsBreathing(bool value)
+        {
+            isBreathing = value;
+        }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.gameObject.layer == LayerMask.NameToLayer("Water"))
+            {
+                rb.gravityScale = 0.1f;
+            }
+        }
+
+        private void OnTriggerExit2D(Collider2D other)
+        {
+            if (other.gameObject.layer == LayerMask.NameToLayer("Water"))
+            {
+                rb.gravityScale = 0.75f;
+            }
         }
     }
 }

@@ -1,61 +1,64 @@
 using UnityEngine;
 
-public class SpearGunController : MonoBehaviour
+namespace Mechanics
 {
-    [SerializeField] private GameObject bulletPrefab;
-
-    [SerializeField] private GameObject player;
-    [SerializeField] private PlayerDivingController playerController;
-    [SerializeField] private SpriteRenderer playerSpriteRenderer;
-    private Rigidbody2D playerRb;
-
-    [Range(0f, 100f)]
-    [SerializeField] private float bulletSpeed;
-
-    [Range(0f, 100f)]
-    [SerializeField] private float knockbackStrength;
-
-    private void Start()
+    public class SpearGunController : MonoBehaviour
     {
-        playerRb = player.GetComponent<Rigidbody2D>();
-    }
+        [SerializeField] private GameObject bulletPrefab;
 
-    void Update()
-    {
-        // rotate the z of the spear gun towards the mouse
-        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector3 lookDir = mousePosition - transform.position;
-        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
+        [SerializeField] private GameObject player;
+        [SerializeField] private PlayerDivingController playerController;
+        [SerializeField] private SpriteRenderer playerSpriteRenderer;
+        private Rigidbody2D playerRb;
 
-        RotateTowardsMouse(mousePosition, angle);
+        [Range(0f, 100f)]
+        [SerializeField] private float bulletSpeed;
 
-        if (Input.GetMouseButtonDown(0))
+        [Range(0f, 100f)]
+        [SerializeField] private float knockbackStrength;
+
+        private void Start()
         {
-            Shoot(lookDir);
+            playerRb = player.GetComponent<Rigidbody2D>();
         }
-    }
 
-    void Shoot(Vector3 shootDirection)
-    {
-        if (!playerController.isBreathing)
+        void Update()
         {
-            // shoot the bullet prefab based on the angle of the spear gun
-            GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-            var controller = bullet.GetComponent<HookController>();
-            controller.SetInitialBulletDirection(shootDirection);
+            // rotate the z of the spear gun towards the mouse
+            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector3 lookDir = mousePosition - transform.position;
+            float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
 
-            playerRb.AddForce(-shootDirection.normalized * knockbackStrength, ForceMode2D.Impulse);
+            RotateTowardsMouse(mousePosition, angle);
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                Shoot(lookDir);
+            }
         }
-    }
 
-    void RotateTowardsMouse(Vector3 mousePosition, float angle)
-    {
-        transform.rotation = Quaternion.Euler(0f, 0f, angle);
+        void Shoot(Vector3 shootDirection)
+        {
+            if (!playerController.isBreathing)
+            {
+                // shoot the bullet prefab based on the angle of the spear gun
+                GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+                var controller = bullet.GetComponent<HookController>();
+                controller.SetInitialBulletDirection(shootDirection);
 
-        // if the mouse is to the left of the spear gun, flip the sprite
-        float y = (mousePosition.x < transform.position.x) ? -0.05f : 0.05f;
-        transform.localScale = new Vector3(0.04f, y, 0.04f);
+                playerRb.AddForce(-shootDirection.normalized * knockbackStrength, ForceMode2D.Impulse);
+            }
+        }
 
-        playerSpriteRenderer.flipX = mousePosition.x <= transform.position.x;
+        void RotateTowardsMouse(Vector3 mousePosition, float angle)
+        {
+            transform.rotation = Quaternion.Euler(0f, 0f, angle);
+
+            // if the mouse is to the left of the spear gun, flip the sprite
+            float y = mousePosition.x < transform.position.x ? -0.05f : 0.05f;
+            transform.localScale = new Vector3(0.04f, y, 0.04f);
+
+            playerSpriteRenderer.flipX = mousePosition.x <= transform.position.x;
+        }
     }
 }

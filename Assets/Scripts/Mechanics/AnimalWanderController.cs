@@ -1,25 +1,17 @@
 using UnityEngine;
 
-namespace Mechanic
+namespace Mechanics
 {
     public class AnimalWanderController : MonoBehaviour
     {
-        [SerializeField]
         [Range(0, 10f)]
-        private float moveRadius = 5f;
-
-        [SerializeField]
+        [SerializeField] private float moveRadius = 5f;
         [Range(0, 10f)]
-        private float moveSpeed = 0.5f;
-
+        [SerializeField] private float moveSpeed = 0.5f;
         private float originalMoveSpeed;
-
-        [SerializeField]
         [Range(0, 1f)]
-        private float speedIncreasePercentage = 0.25f;
-
-        [SerializeField]
-        private GameObject animal;
+        [SerializeField] private float speedIncreasePercentage = 0.25f;
+        [SerializeField] private GameObject animal;
 
         private GameObject player;
         private Vector2 initialPosition;

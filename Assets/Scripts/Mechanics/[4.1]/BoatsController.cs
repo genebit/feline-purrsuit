@@ -1,33 +1,35 @@
-using Mechanics;
 using UnityEngine;
 
-public class BoatsController : MonoBehaviour
+namespace Mechanics
 {
-    public PatrolPath path;
-    private PatrolPath.Mover mover;
-
-    private SpriteRenderer spriteRenderer;
-
-    private void Start()
+    public class BoatsController : MonoBehaviour
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-    }
+        public PatrolPath path;
+        private PatrolPath.Mover mover;
 
-    [Range(0f, 5f)]
-    public float speed;
+        private SpriteRenderer spriteRenderer;
 
-    void Update()
-    {
-        if (path != null)
+        private void Start()
         {
-            if (mover == null) mover = path.CreateMover(speed * Time.deltaTime);
+            spriteRenderer = GetComponent<SpriteRenderer>();
+        }
 
-            Vector2 move = mover.Position - (Vector2)transform.position;
-            move.x = Mathf.Clamp(move.x, -1, 1);
+        [Range(0f, 5f)]
+        public float speed;
 
-            transform.position += (Vector3)move;
+        void Update()
+        {
+            if (path != null)
+            {
+                if (mover == null) mover = path.CreateMover(speed * Time.deltaTime);
 
-            spriteRenderer.flipX = move.x <= 0;
+                Vector2 move = mover.Position - (Vector2)transform.position;
+                move.x = Mathf.Clamp(move.x, -1, 1);
+
+                transform.position += (Vector3)move;
+
+                spriteRenderer.flipX = move.x <= 0;
+            }
         }
     }
 }

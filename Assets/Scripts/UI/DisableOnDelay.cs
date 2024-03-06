@@ -1,30 +1,33 @@
 using System.Collections;
 using UnityEngine;
 
-public class DisableOnDelay : MonoBehaviour
+namespace UI
 {
-    [Range(0, 3f)]
-    public float startAt = 2f;
-
-    [Range(0, 100f)]
-    public float endAt = 5f;
-
-    private void Start()
+    public class DisableOnDelay : MonoBehaviour
     {
-        StartCoroutine(StartText());
-    }
+        [Range(0, 3f)]
+        public float startAt = 2f;
 
-    IEnumerator StartText()
-    {
-        yield return new WaitForSeconds(startAt);
+        [Range(0, 100f)]
+        public float endAt = 5f;
 
-        float timer = 0f;
-        while (timer < endAt)
+        private void Start()
         {
-            timer += Time.deltaTime;
-            yield return null; // Wait for the next frame
+            StartCoroutine(StartText());
         }
 
-        gameObject.SetActive(false);
+        IEnumerator StartText()
+        {
+            yield return new WaitForSeconds(startAt);
+
+            float timer = 0f;
+            while (timer < endAt)
+            {
+                timer += Time.deltaTime;
+                yield return null; // Wait for the next frame
+            }
+
+            gameObject.SetActive(false);
+        }
     }
 }

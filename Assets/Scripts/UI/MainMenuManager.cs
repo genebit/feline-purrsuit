@@ -5,11 +5,8 @@ namespace UI
 {
     public class MainMenuManager : MonoBehaviour
     {
-        [SerializeField]
-        private TransitionSettings transitionSettings;
-
-        [SerializeField]
-        private Animator boatAnimation;
+        [SerializeField] private TransitionSettings transitionSettings;
+        [SerializeField] private Animator boatAnimation;
 
         [Range(0, 3f)]
         public float loadDelay = 0;

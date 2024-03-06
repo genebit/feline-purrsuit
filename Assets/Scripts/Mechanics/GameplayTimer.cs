@@ -1,60 +1,63 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameplayTimer : MonoBehaviour
+namespace Mechanics
 {
-    public Slider timerSlider;
-    [Range(0, 10)]
-    public int minutes = 5;
-    public bool startCountDown = false;
-
-    private float totalTime;
-    private float currentTime;
-
-    private void Start()
+    public class GameplayTimer : MonoBehaviour
     {
-        timerSlider.maxValue = minutes * 60;
-        timerSlider.value = timerSlider.maxValue;
+        public Slider timerSlider;
+        [Range(0, 10)]
+        public int minutes = 5;
+        public bool startCountDown = false;
 
-        totalTime = minutes * 60;
-        currentTime = timerSlider.maxValue;
-    }
+        private float totalTime;
+        private float currentTime;
 
-    private void Update()
-    {
-
-        if (startCountDown)
+        private void Start()
         {
-            currentTime -= Time.deltaTime;
+            timerSlider.maxValue = minutes * 60;
+            timerSlider.value = timerSlider.maxValue;
 
-            timerSlider.value = currentTime;
+            totalTime = minutes * 60;
+            currentTime = timerSlider.maxValue;
+        }
 
-            if (currentTime <= 0)
+        private void Update()
+        {
+
+            if (startCountDown)
             {
-                startCountDown = false;
+                currentTime -= Time.deltaTime;
+
+                timerSlider.value = currentTime;
+
+                if (currentTime <= 0)
+                {
+                    startCountDown = false;
+                }
+            }
+            else
+            {
+                // Game Over, schedule an event.
+                // transition to a game over screen
             }
         }
-        else
+
+        private void OnDestroy()
         {
-            // Game Over, schedule an event.
-            // transition to a game over screen
+            // Save the current timer value when the object is destroyed (e.g., when changing scenes)
+            PlayerPrefs.SetFloat("TimerValue", currentTime);
+            PlayerPrefs.Save();
         }
-    }
 
-    private void OnDestroy()
-    {
-        // Save the current timer value when the object is destroyed (e.g., when changing scenes)
-        PlayerPrefs.SetFloat("TimerValue", currentTime);
-        PlayerPrefs.Save();
-    }
+        public void StartCountdown()
+        {
+            startCountDown = true;
+        }
 
-    public void StartCountdown()
-    {
-        startCountDown = true;
-    }
-
-    public void StopCountdown()
-    {
-        startCountDown = false;
+        public void StopCountdown()
+        {
+            startCountDown = false;
+        }
     }
 }

@@ -1,5 +1,5 @@
 ﻿using Core;
-using Mechanic;
+using Mechanics;
 using Model;
 
 namespace Gameplay

@@ -2,21 +2,27 @@ using Core;
 using Model;
 using UnityEngine;
 
-public class PlayerWalkDustEffect : Simulation.Event<PlayerWalkDustEffect>
+namespace Gameplay
 {
-    private readonly IsoModel model = Simulation.GetModel<IsoModel>();
-
-    public Vector2 movement;
-
-    public override void Execute()
+    public class PlayerWalkDustEffect : Simulation.Event<PlayerWalkDustEffect>
     {
-        if (movement != Vector2.zero)
+        private readonly IsoModel model = Simulation.GetModel<IsoModel>();
+
+        public Vector2 movement;
+
+        public override void Execute()
         {
-            model.player.dustParticle.Play();
-        }
-        else
-        {
-            model.player.dustParticle.Stop();
+            if (model.player != null)
+            {
+                if (movement != Vector2.zero)
+                {
+                    model.player.dustParticle.Play();
+                }
+                else
+                {
+                    model.player.dustParticle.Stop();
+                }
+            }
         }
     }
 }

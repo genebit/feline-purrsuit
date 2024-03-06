@@ -2351,6 +2351,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ea20b750c45a4747acf99aea5368afb, type: 3}
+--- !u!1 &395275894 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3230110041723109998, guid: 5ea20b750c45a4747acf99aea5368afb, type: 3}
+  m_PrefabInstance: {fileID: 395275893}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &398599608
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2923,6 +2928,21 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3230110041723109999, guid: 5ea20b750c45a4747acf99aea5368afb, type: 3}
   m_PrefabInstance: {fileID: 395275893}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &513671460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 395275894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9763f2780e68c742bfa0c9b3630b0c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transitionSettings: {fileID: 11400000, guid: 057babd6f13132c449650d99e3c4e99c, type: 2}
+  promptMessage: Sure. Press E to Sea Dive.
+  transitionTo: '[4] Underwater'
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,25 +1,26 @@
 ﻿using System.Collections.Generic;
-using UnityEditor;
-using UnityEngine;
 
-public static class PropertyDrawersHelper
+namespace Utils
 {
+    public static class PropertyDrawersHelper
+    {
 #if UNITY_EDITOR
 
-    public static string[] AllSceneNames()
-    {
-        var temp = new List<string>();
-        foreach (UnityEditor.EditorBuildSettingsScene S in UnityEditor.EditorBuildSettings.scenes)
+        public static string[] AllSceneNames()
         {
-            if (S.enabled)
+            var temp = new List<string>();
+            foreach (UnityEditor.EditorBuildSettingsScene S in UnityEditor.EditorBuildSettings.scenes)
             {
-                string name = S.path.Substring(S.path.LastIndexOf('/') + 1);
-                name = name.Substring(0, name.Length - 6);
-                temp.Add(name);
+                if (S.enabled)
+                {
+                    string name = S.path.Substring(S.path.LastIndexOf('/') + 1);
+                    name = name.Substring(0, name.Length - 6);
+                    temp.Add(name);
+                }
             }
+            return temp.ToArray();
         }
-        return temp.ToArray();
-    }
 
 #endif
+    }
 }

@@ -1,15 +1,15 @@
 using UnityEngine;
 
-public class StartAreaController : MonoBehaviour
+namespace UI
 {
-    [SerializeField]
-    private GameObject optionMenu;
-
-    [SerializeField]
-    private GameObject startArea;
-
-    private void Update()
+    public class StartAreaController : MonoBehaviour
     {
-        startArea.SetActive(!optionMenu.activeSelf);
+        [SerializeField] private GameObject optionMenu;
+        [SerializeField] private GameObject startArea;
+
+        private void Update()
+        {
+            startArea.SetActive(!optionMenu.activeSelf);
+        }
     }
 }

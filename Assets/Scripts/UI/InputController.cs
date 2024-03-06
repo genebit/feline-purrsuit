@@ -1,27 +1,27 @@
-using UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class InputController : MonoBehaviour
+namespace UI
 {
-    private Camera mainCamera;
-
-    [SerializeField]
-    private MainMenuManager menuManager;
-
-    private void Awake()
+    public class InputController : MonoBehaviour
     {
-        mainCamera = Camera.main;
-    }
+        private Camera mainCamera;
+        [SerializeField] private MainMenuManager menuManager;
 
-    public void OnClick(InputAction.CallbackContext context)
-    {
-        if (!context.started) return;
+        private void Awake()
+        {
+            mainCamera = Camera.main;
+        }
 
-        var rayHit = Physics2D.GetRayIntersection(mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue()));
+        public void OnClick(InputAction.CallbackContext context)
+        {
+            if (!context.started) return;
 
-        if (!rayHit.collider) return;
+            var rayHit = Physics2D.GetRayIntersection(mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue()));
 
-        if (rayHit.collider.gameObject.name == "Start Area") menuManager.StartGame();
+            if (!rayHit.collider) return;
+
+            if (rayHit.collider.gameObject.name == "Start Area") menuManager.StartGame();
+        }
     }
 }

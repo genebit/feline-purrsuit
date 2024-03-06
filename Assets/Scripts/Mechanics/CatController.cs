@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Mechanic
+namespace Mechanics
 {
     public enum CatType
     {
@@ -16,8 +16,7 @@ namespace Mechanic
     {
         public CatType catType;
 
-        [SerializeField]
-        private GameObject cat;
+        [SerializeField] private GameObject cat;
         private SpriteRenderer catSpriteRenderer;
 
         void Start()
