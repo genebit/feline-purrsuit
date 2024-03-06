@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -5,31 +6,43 @@ namespace Mechanics
 {
     public class GameplayTimer : MonoBehaviour
     {
+        public TextMeshProUGUI timerText;
         public Slider timerSlider;
         [Range(0, 10)]
         public int minutes = 5;
-        public bool startCountDown = false;
+        public bool startCountDown;
 
         private float totalTime;
         private float currentTime;
 
+        private const string TIMER_KEY = "Gameplay Timer";
+
         private void Start()
         {
-            timerSlider.maxValue = minutes * 60;
-            timerSlider.value = timerSlider.maxValue;
-
             totalTime = minutes * 60;
-            currentTime = timerSlider.maxValue;
+            
+            if (timerSlider != null)
+            {
+                timerSlider.maxValue = minutes * 60;
+                timerSlider.value = timerSlider.maxValue;
+
+                currentTime = PlayerPrefs.GetFloat(TIMER_KEY, timerSlider.value);
+            }
+            else
+            {
+                currentTime = PlayerPrefs.GetFloat(TIMER_KEY, totalTime);
+            }
         }
 
         private void Update()
         {
-
             if (startCountDown)
             {
                 currentTime -= Time.deltaTime;
 
-                timerSlider.value = currentTime;
+                if (timerSlider != null) timerSlider.value = currentTime;
+                
+                UpdateTimerDisplay(currentTime);
 
                 if (currentTime <= 0)
                 {
@@ -43,10 +56,26 @@ namespace Mechanics
             }
         }
 
+        private void UpdateTimerDisplay(float timeElapsed)
+        {
+            if (timerText != null)
+            {
+                timerText.text = FormatTime(timeElapsed);
+            }
+        }
+
+        private string FormatTime(float timeElapsed)
+        {
+            int minutes = (int)(timeElapsed % 3600 / 60f);
+            int seconds = (int)(timeElapsed % 60f);
+
+            return string.Format("{0:0}:{1:00}", minutes, seconds);
+        }
+
         private void OnDestroy()
         {
             // Save the current timer value when the object is destroyed (e.g., when changing scenes)
-            PlayerPrefs.SetFloat("TimerValue", currentTime);
+            PlayerPrefs.SetFloat(TIMER_KEY, currentTime);
             PlayerPrefs.Save();
         }
 
