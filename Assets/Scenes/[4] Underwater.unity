@@ -1765,7 +1765,7 @@ MonoBehaviour:
   player: {fileID: 583812666}
   playerController: {fileID: 583812668}
   playerSpriteRenderer: {fileID: 5842095459781961040}
-  bulletSpeed: 20
+  bulletSpeed: 6
   knockbackStrength: 40
 --- !u!212 &397749879
 SpriteRenderer:
