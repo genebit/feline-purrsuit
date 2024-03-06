@@ -39,7 +39,7 @@ namespace Mechanics
 
         void Shoot(Vector3 shootDirection)
         {
-            if (!playerController.isBreathing)
+            if (!playerController.isUnderwater)
             {
                 // shoot the bullet prefab based on the angle of the spear gun
                 GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);

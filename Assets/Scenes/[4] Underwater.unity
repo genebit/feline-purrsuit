@@ -937,7 +937,7 @@ GameObject:
   - component: {fileID: 342530298}
   - component: {fileID: 342530299}
   - component: {fileID: 342530292}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Stamina Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2488,12 +2488,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfb8e5ae063993e49a78aa6912f330ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
-  floatForce: 15
   player: {fileID: 5842095459781961041}
-  staminaDecrease: 8
+  moveSpeed: 1
   staminaSlider: {fileID: 663730876}
-  isBreathing: 0
+  floatForce: 15
+  staminaDecrease: 8
+  isUnderwater: 0
+  isDead: 0
+  transitionTo: '[5] Game Over'
+  transitionSettings: {fileID: 11400000, guid: 5d42ad7319df4a8439d74d82f30a60cc, type: 2}
 --- !u!4 &583812669
 Transform:
   m_ObjectHideFlags: 0
@@ -2844,7 +2847,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
-    m_DisabledColor: {r: 0.45882353, g: 0.4862745, b: 1, a: 1}
+    m_DisabledColor: {r: 1, g: 0.3915094, b: 0.5648137, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -2903,7 +2906,7 @@ GameObject:
   - component: {fileID: 663730877}
   - component: {fileID: 663730876}
   - component: {fileID: 663730851}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7926,8 +7929,8 @@ GameObject:
   - component: {fileID: 705466201}
   - component: {fileID: 705466202}
   - component: {fileID: 705466203}
-  - component: {fileID: 705466204}
   - component: {fileID: 705466205}
+  - component: {fileID: 705466204}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -40342,7 +40345,7 @@ GameObject:
   - component: {fileID: 1534718109}
   - component: {fileID: 1534718110}
   - component: {fileID: 1534718108}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47074,7 +47077,7 @@ GameObject:
   - component: {fileID: 1841026269}
   - component: {fileID: 1841026270}
   - component: {fileID: 1841026268}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47150,7 +47153,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0.000022888184, y: 0.09000015}
-  m_SizeDelta: {x: 0, y: -11.89}
+  m_SizeDelta: {x: 2.49, y: -11.89}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1845535609
 GameObject:
@@ -47415,7 +47418,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1873075549}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
