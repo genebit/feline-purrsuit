@@ -20,7 +20,7 @@ namespace Mechanics
         private void Start()
         {
             totalTime = minutes * 60;
-            
+
             if (timerSlider != null)
             {
                 timerSlider.maxValue = minutes * 60;
@@ -41,7 +41,7 @@ namespace Mechanics
                 currentTime -= Time.deltaTime;
 
                 if (timerSlider != null) timerSlider.value = currentTime;
-                
+
                 UpdateTimerDisplay(currentTime);
 
                 if (currentTime <= 0)
@@ -53,6 +53,11 @@ namespace Mechanics
             {
                 // Game Over, schedule an event.
                 // transition to a game over screen
+            }
+
+            if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.D))
+            {
+                Reset();
             }
         }
 
@@ -87,6 +92,13 @@ namespace Mechanics
         public void StopCountdown()
         {
             startCountDown = false;
+        }
+
+        private void Reset()
+        {
+            PlayerPrefs.DeleteKey(TIMER_KEY);
+            timerSlider.value = timerSlider.maxValue;
+            currentTime = timerSlider.value;
         }
     }
 }
