@@ -2,12 +2,11 @@ using Core;
 using Model;
 using UnityEngine;
 
-namespace Mechanic
+namespace Mechanics
 {
-    public class NPCSmallTalkOnEnteredController : MonoBehaviour
+    public class NPCSmallTalkController : MonoBehaviour
     {
-        [SerializeField]
-        private string dialogue;
+        [SerializeField] private string dialogue;
 
         private readonly IsoModel model = Simulation.GetModel<IsoModel>();
 

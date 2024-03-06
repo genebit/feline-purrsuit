@@ -2,23 +2,20 @@ using Core;
 using EasyTransition;
 using Model;
 using UnityEngine;
+using Utils;
 
-namespace Mechanic
+namespace Mechanics
 {
     public class PlayerEnterTransitionableController : MonoBehaviour
     {
-        [SerializeField]
-        private TransitionSettings transitionSettings;
+        [SerializeField] private TransitionSettings transitionSettings;
 
-        [SerializeField]
-        private string promptMessage;
+        [SerializeField] private string promptMessage;
 
-        [SerializeField]
         [StringInList(typeof(PropertyDrawersHelper), "AllSceneNames")]
-        private string transitionTo;
+        [SerializeField] private string transitionTo;
 
         private bool canTransition = false;
-
 
         private readonly IsoModel model = Simulation.GetModel<IsoModel>();
 

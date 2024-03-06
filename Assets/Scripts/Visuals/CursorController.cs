@@ -1,21 +1,23 @@
 using UnityEngine;
 
-public class CursorController : MonoBehaviour
+namespace Visuals
 {
-    [SerializeField]
-    private ParticleSystem particles;
-
-    private Vector2 mousePosition;
-
-    private void Update()
+    public class CursorController : MonoBehaviour
     {
-        // Click left mouse button to turn particles on
-        // and place them at mouse position
-        if (Input.GetMouseButtonDown(0))
+        [SerializeField] private ParticleSystem particles;
+
+        private Vector2 mousePosition;
+
+        private void Update()
         {
-            mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            particles.Play();
-            particles.transform.position = new Vector3(mousePosition.x, mousePosition.y, 0f);
+            // Click left mouse button to turn particles on
+            // and place them at mouse position
+            if (Input.GetMouseButtonDown(0))
+            {
+                mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                particles.Play();
+                particles.transform.position = new Vector3(mousePosition.x, mousePosition.y, 0f);
+            }
         }
     }
 }

@@ -1,13 +1,13 @@
 using Core;
 using Model;
+using UI;
 using UnityEngine;
 
-namespace Mechanic
+namespace Mechanics
 {
     public class ActionPromptController : MonoBehaviour
     {
-        [SerializeField]
-        private TextTypewriter actionPromptText;
+        [SerializeField] private TextTypewriter actionPromptText;
         private GameObject actionPromptTextBackground;
 
         private readonly IsoModel model = Simulation.GetModel<IsoModel>();

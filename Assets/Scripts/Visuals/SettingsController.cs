@@ -2,52 +2,55 @@ using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.UI;
 
-public class SettingsController : MonoBehaviour
+namespace Visuals
 {
-    public PostProcessVolume volume;
-
-    public Toggle bloomToggle;
-    public Toggle vignetteToggle;
-
-    private void Start()
+    public class SettingsController : MonoBehaviour
     {
-        volume = volume.GetComponent<PostProcessVolume>();
-        volume.profile.TryGetSettings(out Bloom bloom);
-        volume.profile.TryGetSettings(out Vignette vignette);
+        public PostProcessVolume volume;
 
-        bool bloomSetting = PlayerPrefs.GetInt("Bloom") == 1;
-        bool vignetteSetting = PlayerPrefs.GetInt("Vignette") == 1;
+        public Toggle bloomToggle;
+        public Toggle vignetteToggle;
 
-        // Set the bloom effect to the saved value
-        bloom.active = bloomSetting;
-
-        // Set the vignette effect to the saved value
-        vignette.active = vignetteSetting;
-
-        if (bloomToggle != null && vignette != null)
+        private void Start()
         {
-            // Set the toggles to the saved values
-            bloomToggle.isOn = bloomSetting;
+            volume = volume.GetComponent<PostProcessVolume>();
+            volume.profile.TryGetSettings(out Bloom bloom);
+            volume.profile.TryGetSettings(out Vignette vignette);
 
-            // Set the toggles to the saved values
-            vignetteToggle.isOn = vignetteSetting;
+            bool bloomSetting = PlayerPrefs.GetInt("Bloom") == 1;
+            bool vignetteSetting = PlayerPrefs.GetInt("Vignette") == 1;
+
+            // Set the bloom effect to the saved value
+            bloom.active = bloomSetting;
+
+            // Set the vignette effect to the saved value
+            vignette.active = vignetteSetting;
+
+            if (bloomToggle != null && vignette != null)
+            {
+                // Set the toggles to the saved values
+                bloomToggle.isOn = bloomSetting;
+
+                // Set the toggles to the saved values
+                vignetteToggle.isOn = vignetteSetting;
+            }
+
         }
 
-    }
+        public void ToggleBloom()
+        {
+            volume.profile.TryGetSettings(out Bloom bloom);
+            bloom.active = bloomToggle.isOn;
 
-    public void ToggleBloom()
-    {
-        volume.profile.TryGetSettings(out Bloom bloom);
-        bloom.active = bloomToggle.isOn;
+            PlayerPrefs.SetInt("Bloom", bloom.active ? 1 : 0);
+        }
 
-        PlayerPrefs.SetInt("Bloom", bloom.active ? 1 : 0);
-    }
+        public void ToggleVignette()
+        {
+            volume.profile.TryGetSettings(out Vignette vignette);
+            vignette.active = vignetteToggle.isOn;
 
-    public void ToggleVignette()
-    {
-        volume.profile.TryGetSettings(out Vignette vignette);
-        vignette.active = vignetteToggle.isOn;
-
-        PlayerPrefs.SetInt("Vignette", vignette.active ? 1 : 0);
+            PlayerPrefs.SetInt("Vignette", vignette.active ? 1 : 0);
+        }
     }
 }

@@ -1,9 +1,10 @@
 using Gameplay;
+using UI;
 using UnityEngine;
 using UnityEngine.UI;
 using static Core.Simulation;
 
-namespace Mechanic
+namespace Mechanics
 {
     public class PlayerController : MonoBehaviour
     {

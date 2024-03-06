@@ -2,33 +2,36 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 
-public class TextTypewriter : MonoBehaviour
+namespace UI
 {
-    [Range(0.01f, 0.1f)]
-    public float typingSpeed = 0.05f;
-    public string fullText;
-    private string currentText = "";
-
-    private void OnEnable()
+    public class TextTypewriter : MonoBehaviour
     {
-        StartCoroutine(TypeText());
-        GetComponent<TextMeshProUGUI>().text = "";
-    }
+        [Range(0.01f, 0.1f)]
+        public float typingSpeed = 0.05f;
+        public string fullText;
+        private string currentText = "";
 
-    public void PlayText()
-    {
-        StartCoroutine(TypeText());
-        GetComponent<TextMeshProUGUI>().text = "";
-    }
-
-    IEnumerator TypeText()
-    {
-        for (int i = 0; i < fullText.Length; i++)
+        private void OnEnable()
         {
-            currentText = fullText.Substring(0, i + 1);
-            GetComponent<TextMeshProUGUI>().text = currentText;
+            StartCoroutine(TypeText());
+            GetComponent<TextMeshProUGUI>().text = "";
+        }
 
-            yield return new WaitForSeconds(typingSpeed);
+        public void PlayText()
+        {
+            StartCoroutine(TypeText());
+            GetComponent<TextMeshProUGUI>().text = "";
+        }
+
+        IEnumerator TypeText()
+        {
+            for (int i = 0; i < fullText.Length; i++)
+            {
+                currentText = fullText.Substring(0, i + 1);
+                GetComponent<TextMeshProUGUI>().text = currentText;
+
+                yield return new WaitForSeconds(typingSpeed);
+            }
         }
     }
 }

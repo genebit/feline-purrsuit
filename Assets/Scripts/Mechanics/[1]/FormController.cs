@@ -5,14 +5,9 @@ namespace Mechanic
 {
     public class FormController : MonoBehaviour
     {
-        [SerializeField]
-        private GameObject formCanvas;
-
-        [SerializeField]
-        private GameObject dialogueCanvas;
-
-        [SerializeField]
-        private TMP_InputField inputfield;
+        [SerializeField] private GameObject formCanvas;
+        [SerializeField] private GameObject dialogueCanvas;
+        [SerializeField] private TMP_InputField inputfield;
 
         private void Update()
         {

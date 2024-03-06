@@ -432,9 +432,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5842095460237327328}
   - component: {fileID: 5842095460237327331}
-  - component: {fileID: 5842095460237327342}
   - component: {fileID: 5842095460237327329}
   - component: {fileID: 5842095460237327343}
+  - component: {fileID: 5842095460237327342}
+  - component: {fileID: 1608528436606040940}
   - component: {fileID: 8528735170342223268}
   m_Layer: 0
   m_Name: Player
@@ -513,30 +514,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5842095460237327342
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5842095460237327330}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa429060118b2864d9adbf8f534ee3ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 2
-  originalSpeed: 0
-  sprintSpeed: 3
-  staminaSlider: {fileID: 1558733839}
-  decreaseSpeed: 25
-  recoverySpeed: 25
-  background: {fileID: 538848815}
-  fill: {fileID: 383519343}
-  attackRadius: 0.45
-  controlEnabled: 1
-  dustParticle: {fileID: 7593743126767175625}
-  actionPrompt: {fileID: 5842095460416439609}
 --- !u!50 &5842095460237327329
 Rigidbody2D:
   serializedVersion: 4
@@ -574,6 +551,46 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: -0.5}
   m_Size: {x: 0.99071527, y: 0.99071527}
   m_Direction: 0
+--- !u!114 &5842095460237327342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5842095460237327330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa429060118b2864d9adbf8f534ee3ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 2
+  originalSpeed: 0
+  sprintSpeed: 3
+  staminaSlider: {fileID: 1558733839}
+  decreaseSpeed: 25
+  recoverySpeed: 25
+  background: {fileID: 538848815}
+  fill: {fileID: 383519343}
+  attackRadius: 0.45
+  controlEnabled: 1
+  dustParticle: {fileID: 7593743126767175625}
+  actionPrompt: {fileID: 5842095460416439609}
+--- !u!114 &1608528436606040940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5842095460237327330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0feabe57f78325d408076006c02ce83f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whiteFish: 0
+  triangleFish: 0
+  goldFish: 0
+  resourceCounter: {fileID: 0}
 --- !u!114 &8528735170342223268
 MonoBehaviour:
   m_ObjectHideFlags: 0

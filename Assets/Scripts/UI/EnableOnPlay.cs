@@ -1,12 +1,15 @@
 using UnityEngine;
 
-public class EnableOnPlay : MonoBehaviour
+namespace UI
 {
-    private Canvas canvas;
-
-    private void Start()
+    public class EnableOnPlay : MonoBehaviour
     {
-        canvas = gameObject.GetComponent<Canvas>();
-        canvas.enabled = true;
+        private Canvas canvas;
+
+        private void Start()
+        {
+            canvas = gameObject.GetComponent<Canvas>();
+            canvas.enabled = true;
+        }
     }
 }
