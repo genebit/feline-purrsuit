@@ -9,7 +9,7 @@ namespace Mechanics
         public TextMeshProUGUI timerText;
         public Slider timerSlider;
         [Range(0, 10)]
-        public int minutes = 5;
+        public int minutes;
         public bool startCountDown;
 
         private float totalTime;
@@ -59,6 +59,11 @@ namespace Mechanics
             {
                 Reset();
             }
+        }
+
+        public float GetCurrentTime()
+        {
+            return currentTime;
         }
 
         private void UpdateTimerDisplay(float timeElapsed)

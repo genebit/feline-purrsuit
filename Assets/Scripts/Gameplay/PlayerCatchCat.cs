@@ -1,17 +1,17 @@
 ﻿using Core;
-using Mechanics;
 using Model;
+using UnityEngine;
 
 namespace Gameplay
 {
     public class PlayerCatchCat : Simulation.Event<PlayerCatchCat>
     {
-        private readonly IsoModel isoModel = Simulation.GetModel<IsoModel>();
-        public CatController cat;
+        private readonly IsoModel model = Simulation.GetModel<IsoModel>();
+        public GameObject cat;
 
         public override void Execute()
         {
-            UnityEngine.Debug.Log("Catch cat!");
+            model.tamedCats.AddCat(cat);
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿using Mechanic;
-using Mechanics;
+﻿using Mechanics;
 using UnityEngine;
 
 namespace Model
@@ -13,7 +12,11 @@ namespace Model
 
         public InventoryController inventory;
 
+        public TamedCatsController tamedCats;
+
         public ActionPromptController playerActionPrompt;
+
+        public GameplayTimer timer;
 
         public GameObject hudCanvas;
 

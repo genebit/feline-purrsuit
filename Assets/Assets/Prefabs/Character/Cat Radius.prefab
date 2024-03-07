@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8718243986590850273}
   m_Layer: 0
   m_Name: Cat
-  m_TagString: Untagged
+  m_TagString: Cat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -191,7 +191,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45f7e89a5e1f69641ba1170103788d1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveRadius: 0.6
-  moveSpeed: 0.75
-  speedIncreasePercentage: 0.75
+  catType: 0
   cat: {fileID: 972140239772991872}

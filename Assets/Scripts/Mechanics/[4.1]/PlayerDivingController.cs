@@ -64,8 +64,11 @@ namespace Mechanics
                 if (staminaSlider.value == 0)
                 {
                     isDead = true;
-                    var ev = Schedule<PlayerDied>();
-                    ev.player = this;
+
+                    // Game Over, schedule an event.
+                    var ev = Schedule<TransitionToScene>();
+                    ev.transitionTo = transitionTo;
+                    ev.transitionSettings = transitionSettings;
                 }
             }
         }
