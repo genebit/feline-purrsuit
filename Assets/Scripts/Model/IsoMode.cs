@@ -1,5 +1,6 @@
 ﻿using Mechanics;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Model
 {
@@ -13,6 +14,8 @@ namespace Model
         public InventoryController inventory;
 
         public TamedCatsController tamedCats;
+
+        public Slider tameMeter;
 
         public ActionPromptController playerActionPrompt;
 
