@@ -35,7 +35,7 @@ namespace UI
             // Initialize
             dialogueText.text = string.Empty;
             speakerNames = new string[lines.Length];
-            playerName = PlayerPrefs.GetString("PlayerName");
+            playerName = PlayerPrefs.GetString(SaveKeys.PLAYER_NAME);
 
             ProcessLines();
             StartDialogue();

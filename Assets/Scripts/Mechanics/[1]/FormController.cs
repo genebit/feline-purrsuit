@@ -1,3 +1,4 @@
+using Core;
 using TMPro;
 using UnityEngine;
 
@@ -29,7 +30,7 @@ namespace Mechanic
             if (inputfield.text.Trim().Length != 0)
             {
                 // Store it into player prefs
-                PlayerPrefs.SetString("PlayerName", inputfield.text);
+                PlayerPrefs.SetString(SaveKeys.PLAYER_NAME, inputfield.text);
 
                 formCanvas.SetActive(false);
                 dialogueCanvas.SetActive(true);

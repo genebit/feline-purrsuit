@@ -1,3 +1,4 @@
+using Core;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.UI;
@@ -17,8 +18,8 @@ namespace Visuals
             volume.profile.TryGetSettings(out Bloom bloom);
             volume.profile.TryGetSettings(out Vignette vignette);
 
-            bool bloomSetting = PlayerPrefs.GetInt("Bloom") == 1;
-            bool vignetteSetting = PlayerPrefs.GetInt("Vignette") == 1;
+            bool bloomSetting = PlayerPrefs.GetInt(SaveKeys.BLOOM) == 1;
+            bool vignetteSetting = PlayerPrefs.GetInt(SaveKeys.VIGNETTE) == 1;
 
             // Set the bloom effect to the saved value
             bloom.active = bloomSetting;
@@ -42,7 +43,7 @@ namespace Visuals
             volume.profile.TryGetSettings(out Bloom bloom);
             bloom.active = bloomToggle.isOn;
 
-            PlayerPrefs.SetInt("Bloom", bloom.active ? 1 : 0);
+            PlayerPrefs.SetInt(SaveKeys.BLOOM, bloom.active ? 1 : 0);
         }
 
         public void ToggleVignette()
@@ -50,7 +51,7 @@ namespace Visuals
             volume.profile.TryGetSettings(out Vignette vignette);
             vignette.active = vignetteToggle.isOn;
 
-            PlayerPrefs.SetInt("Vignette", vignette.active ? 1 : 0);
+            PlayerPrefs.SetInt(SaveKeys.VIGNETTE, vignette.active ? 1 : 0);
         }
     }
 }

@@ -2108,9 +2108,9 @@ MonoBehaviour:
   - "[TOWN MAYOR] As you\u2019ve known, this town is facing a HUGE crisis..."
   - '[TOWN MAYOR] A CATastrophic CRISIS!!!!'
   - '[TOWN MAYOR] This town has way too many strays that needs to be moved out of
-    town and be relocated on an adaption center!'
+    town!'
   - "[TOWN MAYOR] That\u2019s where you come in [PLAYER]! Capture all cats in this
-    town and keep them in your home for 3 days. "
+    town and keep them in your home until later afternoon! "
   - '[PLAYER] *sleeping* Ah - YES! Certainly Mayor! Consider it done!'
   - '[TOWN MAYOR] HOHO! Great!'
   transitionSettings: {fileID: 11400000, guid: 5d42ad7319df4a8439d74d82f30a60cc, type: 2}
@@ -2471,8 +2471,11 @@ MonoBehaviour:
   model:
     virtualCamera: {fileID: 1467750232}
     player: {fileID: 2070404788}
-    inventory: {fileID: 2070404790}
+    inventory: {fileID: 0}
+    tamedCats: {fileID: 0}
+    tameMeter: {fileID: 0}
     playerActionPrompt: {fileID: 2070404789}
+    timer: {fileID: 0}
     hudCanvas: {fileID: 0}
 --- !u!4 &705466200
 Transform:
@@ -4899,7 +4902,8 @@ PrefabInstance:
       propertyPath: controlEnabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1608528436606040940, guid: b521beb7dcb876046b65d048750ab558, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b521beb7dcb876046b65d048750ab558, type: 3}
 --- !u!114 &2070404788 stripped
 MonoBehaviour:
@@ -4921,17 +4925,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9b5c53e32d9758e4c943915c920f9ee8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2070404790 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1608528436606040940, guid: b521beb7dcb876046b65d048750ab558, type: 3}
-  m_PrefabInstance: {fileID: 2070404787}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0feabe57f78325d408076006c02ce83f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &2070404797 stripped
