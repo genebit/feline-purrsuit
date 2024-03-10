@@ -1,5 +1,7 @@
+using Core;
 using EasyTransition;
 using Gameplay;
+using Model;
 using UnityEngine;
 using UnityEngine.UI;
 using Utils;
@@ -31,6 +33,9 @@ namespace Mechanics
 
         private SpriteRenderer playerSpriteRenderer;
         private Rigidbody2D rb;
+        private bool warningPromptShown = false;
+
+        private readonly IsoModel model = Simulation.GetModel<IsoModel>();
 
         void Start()
         {
@@ -61,12 +66,7 @@ namespace Mechanics
                 staminaSlider.value -= Time.deltaTime * staminaDecrease;
                 staminaSlider.value = Mathf.Clamp(staminaSlider.value, 0f, 100f);
 
-                if (staminaSlider.value == 0)
-                {
-                    isDead = true;
-                    var ev = Schedule<PlayerDied>();
-                    ev.player = this;
-                }
+                OnPlayerDeath();
             }
         }
 
@@ -87,6 +87,31 @@ namespace Mechanics
             else
             {
                 player.transform.rotation = Quaternion.Euler(0, 0, 0);
+            }
+        }
+
+        private void OnPlayerDeath()
+        {
+            if (staminaSlider.value == 0)
+            {
+                isDead = true;
+
+                // Game Over, schedule an event.
+                var ev = Schedule<TransitionToScene>();
+                ev.transitionTo = transitionTo;
+                ev.transitionSettings = transitionSettings;
+            }
+            else if (staminaSlider.value < 30f)
+            {
+                if (!warningPromptShown)
+                {
+                    model.playerActionPrompt.Prompt("I'm not feline good...");
+                    warningPromptShown = true;
+                }
+            }
+            else
+            {
+                warningPromptShown = false;
             }
         }
 

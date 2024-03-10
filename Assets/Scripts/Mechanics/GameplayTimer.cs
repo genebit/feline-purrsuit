@@ -1,3 +1,4 @@
+using Core;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,13 +10,11 @@ namespace Mechanics
         public TextMeshProUGUI timerText;
         public Slider timerSlider;
         [Range(0, 10)]
-        public int minutes = 5;
+        public int minutes;
         public bool startCountDown;
 
         private float totalTime;
         private float currentTime;
-
-        private const string TIMER_KEY = "Gameplay Timer";
 
         private void Start()
         {
@@ -26,11 +25,11 @@ namespace Mechanics
                 timerSlider.maxValue = minutes * 60;
                 timerSlider.value = timerSlider.maxValue;
 
-                currentTime = PlayerPrefs.GetFloat(TIMER_KEY, timerSlider.value);
+                currentTime = PlayerPrefs.GetFloat(SaveKeys.GAMPLAY_TIMER, timerSlider.value);
             }
             else
             {
-                currentTime = PlayerPrefs.GetFloat(TIMER_KEY, totalTime);
+                currentTime = PlayerPrefs.GetFloat(SaveKeys.GAMPLAY_TIMER, totalTime);
             }
         }
 
@@ -61,6 +60,11 @@ namespace Mechanics
             }
         }
 
+        public float GetCurrentTime()
+        {
+            return currentTime;
+        }
+
         private void UpdateTimerDisplay(float timeElapsed)
         {
             if (timerText != null)
@@ -80,7 +84,7 @@ namespace Mechanics
         private void OnDestroy()
         {
             // Save the current timer value when the object is destroyed (e.g., when changing scenes)
-            PlayerPrefs.SetFloat(TIMER_KEY, currentTime);
+            PlayerPrefs.SetFloat(SaveKeys.GAMPLAY_TIMER, currentTime);
             PlayerPrefs.Save();
         }
 
@@ -96,9 +100,17 @@ namespace Mechanics
 
         private void Reset()
         {
-            PlayerPrefs.DeleteKey(TIMER_KEY);
-            timerSlider.value = timerSlider.maxValue;
-            currentTime = timerSlider.value;
+            PlayerPrefs.DeleteKey(SaveKeys.GAMPLAY_TIMER);
+            if (timerSlider != null)
+            {
+                timerSlider.value = timerSlider.maxValue;
+                currentTime = timerSlider.value;
+            }
+            else
+            {
+                currentTime = totalTime;
+            }
+            StartCountdown();
         }
     }
 }

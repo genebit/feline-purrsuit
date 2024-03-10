@@ -22,7 +22,7 @@ namespace Gameplay
             Vector3 attackDir = (mousePosition - player.transform.position).normalized;
 
             bool collideWithCat = false;
-            CatController collidedCat = null;
+            GameObject collidedCat = null;
 
             // Draw rays
             for (int i = 0; i < rayCount; i++)
@@ -48,7 +48,7 @@ namespace Gameplay
                 if ((hit.collider && hit.collider.CompareTag("Cat")))
                 {
                     collideWithCat = true;
-                    collidedCat = hit.collider.gameObject.GetComponent<CatController>();
+                    collidedCat = hit.collider.gameObject;
                 }
             }
 
