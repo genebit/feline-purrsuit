@@ -61,15 +61,7 @@ namespace Mechanics
                 staminaSlider.value -= Time.deltaTime * staminaDecrease;
                 staminaSlider.value = Mathf.Clamp(staminaSlider.value, 0f, 100f);
 
-                if (staminaSlider.value == 0)
-                {
-                    isDead = true;
-
-                    // Game Over, schedule an event.
-                    var ev = Schedule<TransitionToScene>();
-                    ev.transitionTo = transitionTo;
-                    ev.transitionSettings = transitionSettings;
-                }
+                OnPlayerDeath();
             }
         }
 
@@ -90,6 +82,19 @@ namespace Mechanics
             else
             {
                 player.transform.rotation = Quaternion.Euler(0, 0, 0);
+            }
+        }
+
+        private void OnPlayerDeath()
+        {
+            if (staminaSlider.value == 0)
+            {
+                isDead = true;
+
+                // Game Over, schedule an event.
+                var ev = Schedule<TransitionToScene>();
+                ev.transitionTo = transitionTo;
+                ev.transitionSettings = transitionSettings;
             }
         }
 
