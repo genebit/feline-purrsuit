@@ -156,6 +156,7 @@ GameObject:
   m_Component:
   - component: {fileID: 972140240287268096}
   - component: {fileID: 972140240287268103}
+  - component: {fileID: 6382211056322927133}
   m_Layer: 0
   m_Name: Cat Radius
   m_TagString: Untagged
@@ -193,3 +194,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   catType: 0
   cat: {fileID: 972140239772991872}
+--- !u!114 &6382211056322927133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 972140240287268097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 351525a939390e040ba90ff135677a92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveRadius: 0.75
+  moveSpeed: 0.75
+  speedIncreasePercentage: 0.75
+  animal: {fileID: 972140239772991872}
