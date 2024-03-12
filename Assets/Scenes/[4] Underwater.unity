@@ -47466,6 +47466,14 @@ PrefabInstance:
       propertyPath: fullText
       value: Fish for fishes!
       objectReference: {fileID: 0}
+    - target: {fileID: 8485755160635477081, guid: 9387704649df7fb4d852f933931b4691, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 705466203}
+    - target: {fileID: 8485755160635477081, guid: 9387704649df7fb4d852f933931b4691, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ExitGame
+      objectReference: {fileID: 0}
     - target: {fileID: 8485755160664573219, guid: 9387704649df7fb4d852f933931b4691, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

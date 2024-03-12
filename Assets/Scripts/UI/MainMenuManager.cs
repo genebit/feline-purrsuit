@@ -17,15 +17,18 @@ namespace UI
         {
             boatAnimation.SetBool("TakeOff", true);
             transitionSound.Play();
-            TransitionManager.Instance().Transition("[1] Onboarding", transitionSettings, loadDelay);
             DeleteAllKeys();
+
+            TransitionManager.Instance().Transition("[1] Onboarding", transitionSettings, loadDelay);
         }
 
         public void ExitGame()
         {
-            TransitionManager.Instance().Transition("[0] Main Menu", transitionSettings, loadDelay);
+            Time.timeScale = 1;
             transitionSound.Play();
             DeleteAllKeys();
+
+            TransitionManager.Instance().Transition("[0] Main Menu", transitionSettings, loadDelay);
         }
 
         public void QuitGame()
@@ -35,6 +38,7 @@ namespace UI
 
         private void DeleteAllKeys()
         {
+            PlayerPrefs.DeleteKey(SaveKeys.SEEN_GAMPLAY_TUTORIAL);
             PlayerPrefs.DeleteKey(SaveKeys.GAMPLAY_TIMER);
             PlayerPrefs.DeleteKey(SaveKeys.TAMED_CATS);
             PlayerPrefs.DeleteKey(SaveKeys.TAME_METER);

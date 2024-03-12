@@ -2245,8 +2245,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Some cats are not easy to catch and will require some bait to be caught!
-    Talk with the townfolks to get hints on capturing these difficult critters.
+  m_text: Once you've known what the cat likes, you can now gather that food to allow
+    the critters to fall in your handy net!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 22282fa54c669b541b2cbc5566a3c168, type: 2}
   m_sharedMaterial: {fileID: 5889180235482226831, guid: 22282fa54c669b541b2cbc5566a3c168, type: 2}
@@ -4465,8 +4465,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Catch cats with your net. Use mouse to aim and left-click to capture.
-    Carry bait for different cat types to catch them. Fish in the sea for bait.\r"
+  m_text: Gathel intel first from the townfolks so that you know what to look for
+    in the sea! Catch cats with your net. Use mouse to aim and left-click to capture.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 22282fa54c669b541b2cbc5566a3c168, type: 2}
   m_sharedMaterial: {fileID: 5889180235482226831, guid: 22282fa54c669b541b2cbc5566a3c168, type: 2}
@@ -7046,6 +7046,7 @@ GameObject:
   - component: {fileID: 1774447390}
   - component: {fileID: 1774447389}
   - component: {fileID: 1774447393}
+  - component: {fileID: 1774447394}
   m_Layer: 5
   m_Name: Tips
   m_TagString: Untagged
@@ -7152,6 +7153,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da370b0b90ff9e046987b6da1fede11d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1774447394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1774447388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4319c167d308c1d4dacf8df32174f989, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HUD: {fileID: 1894454914}
 --- !u!1 &1869515160
 GameObject:
   m_ObjectHideFlags: 0
@@ -8578,7 +8592,7 @@ MonoBehaviour:
   - {fileID: 72517096}
   - {fileID: 1642074965}
   - {fileID: 2068575940}
-  decreaseBySeconds: 5
+  decreaseBySeconds: 3
   hasTamedAll: 0
   catSound: {fileID: 2095802516}
 --- !u!114 &2095802514
@@ -8595,7 +8609,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerText: {fileID: 1894454915}
   timerSlider: {fileID: 1999890261}
-  minutes: 6
+  minutes: 8
   startCountDown: 1
 --- !u!114 &2095802515
 MonoBehaviour:

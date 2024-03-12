@@ -12,6 +12,7 @@
         public const string GOLD_FISH = "GOLD_FISH";
 
         // Gamplay Related:
+        public const string SEEN_GAMPLAY_TUTORIAL = "SEEN_GAMEPLAY_TUTORIAL";
         public const string GAMPLAY_TIMER = "GAMEPLAY_TIMER";
         public const string TAME_METER = "TAME_METER";
         public const string TAMED_CATS = "TAMED_CATS";

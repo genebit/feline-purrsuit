@@ -28,23 +28,28 @@ namespace Visuals
             // Set the vignette effect to the saved value
             vignette.active = vignetteSetting;
 
-            if (bloomToggle != null && vignette != null)
+            if (bloomToggle != null && vignette != null && musicSlider != null)
             {
                 // Set the toggles to the saved values
                 bloomToggle.isOn = bloomSetting;
 
                 // Set the toggles to the saved values
                 vignetteToggle.isOn = vignetteSetting;
+
+                musicSlider.value = PlayerPrefs.GetFloat(SaveKeys.BACKGROUND_MUSIC, 100f);
             }
 
-            musicSlider.value = PlayerPrefs.GetFloat(SaveKeys.BACKGROUND_MUSIC, 100f);
         }
 
         private void Update()
         {
-            // set the volume of the background music to the value of the slider
-            AudioListener.volume = musicSlider.value / 100;
-            PlayerPrefs.SetFloat(SaveKeys.BACKGROUND_MUSIC, musicSlider.value);
+            if (musicSlider != null)
+            {
+                // set the volume of the background music to the value of the slider
+                AudioListener.volume = musicSlider.value / 100;
+                PlayerPrefs.SetFloat(SaveKeys.BACKGROUND_MUSIC, musicSlider.value);
+
+            }
         }
 
         public void ToggleBloom()
