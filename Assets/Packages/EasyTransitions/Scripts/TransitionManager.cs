@@ -1,14 +1,13 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 namespace EasyTransition
 {
 
     public class TransitionManager : MonoBehaviour
-    {        
+    {
         [SerializeField] private GameObject transitionTemplate;
 
         private bool runningTransition;
@@ -177,7 +176,7 @@ namespace EasyTransition
                 var managerCount = GameObject.FindObjectsOfType<TransitionManager>(true).Length;
                 if (managerCount > 1)
                     Debug.LogError($"There are {managerCount.ToString()} Transition Managers in your scene. Please ensure there is only one Transition Manager in your scene or overlapping transitions may occur.");
-            
+
                 yield return new WaitForSecondsRealtime(1f);
             }
         }

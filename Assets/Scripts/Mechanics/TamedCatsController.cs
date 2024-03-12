@@ -27,6 +27,8 @@ namespace Mechanics
         [Range(0, 10)]
         public int decreaseBySeconds;
         public bool hasTamedAll;
+
+        [SerializeField] private AudioSource catSound;
         #endregion
 
         private const int TOTAL_CATS = 20;
@@ -72,6 +74,7 @@ namespace Mechanics
 
         public void CatCaught(GameObject cat)
         {
+            catSound.Play();
             tamedCatsObj.cats.Add(cat.name);
             UpdateKey();
 

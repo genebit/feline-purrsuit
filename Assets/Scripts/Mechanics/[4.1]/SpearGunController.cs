@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 namespace Mechanics
@@ -9,16 +10,23 @@ namespace Mechanics
         [SerializeField] private GameObject player;
         [SerializeField] private PlayerDivingController playerController;
         [SerializeField] private SpriteRenderer playerSpriteRenderer;
-        private Rigidbody2D playerRb;
+        [SerializeField] private AudioSource gunSFX;
 
         [Range(0f, 10f)]
         [SerializeField] private float bulletSpeed;
 
+        [Range(0f, 5f)]
+        [SerializeField] private float bulletReloadSpeed;
+
         [Range(0f, 100f)]
         [SerializeField] private float knockbackStrength;
 
+        private Rigidbody2D playerRb;
+        private bool allowShooting;
+
         private void Start()
         {
+            allowShooting = true;
             playerRb = player.GetComponent<Rigidbody2D>();
         }
 
@@ -31,16 +39,19 @@ namespace Mechanics
 
             RotateTowardsMouse(mousePosition, angle);
 
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && allowShooting)
             {
-                Shoot(lookDir);
+                StartCoroutine(Shoot(lookDir));
             }
         }
 
-        void Shoot(Vector3 shootDirection)
+        IEnumerator Shoot(Vector3 shootDirection)
         {
-            if (!playerController.isUnderwater)
+            // if the player is not underwater, play the gun sound effect and shoot the bullet
+            if (!playerController.isBreathing)
             {
+
+                gunSFX.Play();
                 // shoot the bullet prefab based on the angle of the spear gun
                 GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
                 var controller = bullet.GetComponent<HookController>();
@@ -48,6 +59,10 @@ namespace Mechanics
                 controller.speed = bulletSpeed;
 
                 playerRb.AddForce(-shootDirection.normalized * knockbackStrength, ForceMode2D.Impulse);
+
+                allowShooting = false;
+                yield return new WaitForSeconds(bulletReloadSpeed);
+                allowShooting = true;
             }
         }
 

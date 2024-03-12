@@ -18,18 +18,20 @@ namespace Mechanics
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
 
-            // randomize the fish type. the white fish is the most common with 70% chance,
-            // the triangle fish is uncommon with 20% chance, and
-            // the gold fish is rare with 10% chance
+            // randomize the fish type. the white fish is the most common with 80% chance,
+            // the triangle fish is uncommon with 15% chance, and
+            // the gold fish is rare with 5% chance
 
             int random = Random.Range(0, 100);
 
-            if (random < 70)
+            if (random < 80)
                 fishType = FishType.WhiteFish;
-            else if (random < 90)
+            else if (random < 95)
                 fishType = FishType.TriangleFish;
             else
                 fishType = FishType.GoldFish;
+
+
 
             // Set the fish sprite
             SetFishSprite();

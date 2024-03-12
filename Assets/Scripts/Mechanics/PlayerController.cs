@@ -11,6 +11,7 @@ namespace Mechanics
         #region Inspector View
         [Range(0, 5f)]
         public float moveSpeed = 2.5f;
+        [SerializeField] private AudioSource walkSound;
 
         [HideInInspector]
         public float originalSpeed;
@@ -19,6 +20,7 @@ namespace Mechanics
         [Range(0, 5f)]
         [Header("Sprinting")]
         public float sprintSpeed = 3.5f;
+        [SerializeField] private AudioSource sprintSound;
 
         public Slider staminaSlider;
         [Range(0, 50f)]
@@ -100,6 +102,21 @@ namespace Mechanics
             // handle dust effect when walking
             var ev = Schedule<PlayerWalkDustEffect>();
             ev.movement = movement;
+
+            // NOTE(Gene): this code is ugly af. I'm sorry.
+            if (movement.x > 0 || movement.x < 0)
+            {
+                walkSound.Play();
+            }
+            else if (moveSpeed == 1.25f)
+            {
+                sprintSound.Play();
+            }
+            else
+            {
+                walkSound.Stop();
+                sprintSound.Stop();
+            }
         }
 
         public void ToggleControl(bool value)
