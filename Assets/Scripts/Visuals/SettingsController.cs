@@ -11,6 +11,7 @@ namespace Visuals
 
         public Toggle bloomToggle;
         public Toggle vignetteToggle;
+        public Slider musicSlider;
 
         private void Start()
         {
@@ -36,6 +37,14 @@ namespace Visuals
                 vignetteToggle.isOn = vignetteSetting;
             }
 
+            musicSlider.value = PlayerPrefs.GetFloat(SaveKeys.BACKGROUND_MUSIC, 100f);
+        }
+
+        private void Update()
+        {
+            // set the volume of the background music to the value of the slider
+            AudioListener.volume = musicSlider.value / 100;
+            PlayerPrefs.SetFloat(SaveKeys.BACKGROUND_MUSIC, musicSlider.value);
         }
 
         public void ToggleBloom()

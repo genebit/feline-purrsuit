@@ -39671,6 +39671,7 @@ MonoBehaviour:
   volume: {fileID: 2012956828}
   bloomToggle: {fileID: 1114673824}
   vignetteToggle: {fileID: 283248637}
+  musicSlider: {fileID: 4132473716719768415}
 --- !u!82 &1924015283
 AudioSource:
   m_ObjectHideFlags: 0
@@ -40534,3 +40535,14 @@ PrefabInstance:
       objectReference: {fileID: 1924015282}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a71c46877c71d942b0179032c0d3341, type: 3}
+--- !u!114 &4132473716719768415 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4132473717004633360, guid: 5a71c46877c71d942b0179032c0d3341, type: 3}
+  m_PrefabInstance: {fileID: 4132473716719768414}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

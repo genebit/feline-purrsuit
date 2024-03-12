@@ -2941,6 +2941,7 @@ MonoBehaviour:
   volume: {fileID: 519420034}
   bloomToggle: {fileID: 1894454917}
   vignetteToggle: {fileID: 1894454916}
+  musicSlider: {fileID: 1279332509}
 --- !u!114 &705466203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5430,6 +5431,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3230110041723109999, guid: 5ea20b750c45a4747acf99aea5368afb, type: 3}
   m_PrefabInstance: {fileID: 1327895640}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1279332509 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8485755159678458230, guid: 9387704649df7fb4d852f933931b4691, type: 3}
+  m_PrefabInstance: {fileID: 1894454913}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1284374270
 GameObject:
   m_ObjectHideFlags: 0
