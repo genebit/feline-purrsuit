@@ -6,6 +6,7 @@ namespace Mechanics
     {
         private Animator animator;
         private SpriteRenderer spriteRenderer;
+        [SerializeField] private AudioSource catchSFX;
 
         private void Start()
         {
@@ -27,6 +28,7 @@ namespace Mechanics
 
         void Catch()
         {
+            catchSFX.Play();
             animator.SetTrigger((spriteRenderer.flipX) ? "Catch" : "CatchInvert");
         }
     }

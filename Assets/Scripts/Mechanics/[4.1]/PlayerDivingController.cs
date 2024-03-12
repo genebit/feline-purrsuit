@@ -19,7 +19,7 @@ namespace Mechanics
         public Slider staminaSlider;
         [Range(0f, 20f)] public float floatForce;
         [Range(0f, 20f)] public float staminaDecrease;
-        public bool isUnderwater;
+        public bool isBreathing;
         public bool isDead;
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace Mechanics
 
             FlipSprite(rb.velocity);
 
-            if (!isUnderwater && !isDead)
+            if (!isBreathing && !isDead)
             {
                 // Floating control
                 if (Input.GetKey(KeyCode.Space))
@@ -117,7 +117,7 @@ namespace Mechanics
 
         public void SetIsBreathing(bool value)
         {
-            isUnderwater = value;
+            isBreathing = value;
         }
 
         private void OnTriggerEnter2D(Collider2D other)

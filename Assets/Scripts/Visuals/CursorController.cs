@@ -5,6 +5,7 @@ namespace Visuals
     public class CursorController : MonoBehaviour
     {
         [SerializeField] private ParticleSystem particles;
+        [SerializeField] private AudioSource clickSFX;
 
         private Vector2 mousePosition;
 
@@ -16,6 +17,7 @@ namespace Visuals
             {
                 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 particles.Play();
+                clickSFX.Play();
                 particles.transform.position = new Vector3(mousePosition.x, mousePosition.y, 0f);
             }
         }

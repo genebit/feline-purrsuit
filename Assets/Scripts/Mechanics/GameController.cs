@@ -19,6 +19,12 @@ namespace Mechanics
         //shared reference when the scene loads, allowing the model to be
         //conveniently configured inside the inspector.
         public IsoModel model = Simulation.GetModel<IsoModel>();
+        public bool pauseGame;
+
+        void Start()
+        {
+            Time.timeScale = pauseGame ? 0 : 1;
+        }
 
         void OnEnable()
         {
@@ -38,11 +44,13 @@ namespace Mechanics
         public void PauseGame()
         {
             Time.timeScale = 0;
+            pauseGame = true;
         }
 
         public void ResumeGame()
         {
             Time.timeScale = 1;
+            pauseGame = false;
         }
     }
 }

@@ -17,10 +17,16 @@ namespace UI
         [Range(10f, 100f)]
         public float textSpeed;
 
-        [SerializeField] private string[] lines;
-        [SerializeField] private TransitionSettings transitionSettings;
+        [Header("Avatar 1")]
         [SerializeField] private UIOpacity avatar1;
+        [SerializeField] private AudioSource avatar1AudioSource;
+
+        [Header("Avatar 2")]
         [SerializeField] private UIOpacity avatar2;
+        [SerializeField] private AudioSource avatar2AudioSource;
+        [SerializeField] private string[] lines;
+
+        [SerializeField] private TransitionSettings transitionSettings;
         #endregion
 
         private string[] speakerNames;
@@ -28,6 +34,10 @@ namespace UI
         private string playerName;
 
         private readonly IsoModel model = Simulation.GetModel<IsoModel>();
+
+        private const string PLAYER = "[PLAYER]";
+        private const string TOWN_MAYOR = "[TOWN MAYOR]";
+        private const string S_TOWN_MAYOR = "TOWN MAYOR";
 
         // Start is called before the first frame update
         void Start()
@@ -43,13 +53,6 @@ namespace UI
 
         private void ProcessLines()
         {
-            const string PLAYER = "[PLAYER]";
-            const string TOWN_MAYOR = "[TOWN MAYOR]";
-            const string S_TOWN_MAYOR = "TOWN MAYOR";
-
-            const string TOWNS_FOLK = "[TOWNSFOLK]";
-            const string S_TOWNS_FOLK = "TOWNSFOLK";
-
             for (int i = 0; i < lines.Length; i++)
             {
                 // find a word [PLAYER] and replace it with the
@@ -65,12 +68,6 @@ namespace UI
                     speakerNames[i] = S_TOWN_MAYOR;
                     lines[i] = lines[i].Replace(TOWN_MAYOR, string.Empty).Trim();
                 }
-                // find a word [TOWNSFOLK] and remove it from dialogue text
-                if (lines[i].Contains(TOWNS_FOLK))
-                {
-                    speakerNames[i] = S_TOWNS_FOLK;
-                    lines[i] = lines[i].Replace(TOWNS_FOLK, string.Empty).Trim();
-                }
             }
         }
 
@@ -79,6 +76,7 @@ namespace UI
         {
             if (Input.GetMouseButtonDown(0))
             {
+
                 if (dialogueText.text == lines[index])
                 {
                     NextLine();
@@ -88,6 +86,20 @@ namespace UI
                     StopAllCoroutines();
                     dialogueText.text = lines[index];
                 }
+
+                PlaySpeakerVoice();
+            }
+        }
+
+        void PlaySpeakerVoice()
+        {
+            if (speakerNames[index].Equals(playerName.ToUpper()))
+            {
+                avatar1AudioSource.Play();
+            }
+            else
+            {
+                avatar2AudioSource.Play();
             }
         }
 

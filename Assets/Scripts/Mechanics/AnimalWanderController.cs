@@ -12,6 +12,7 @@ namespace Mechanics
         [Range(0, 1f)]
         [SerializeField] private float speedIncreasePercentage = 0.25f;
         [SerializeField] private GameObject animal;
+        [SerializeField] private AudioSource animalSound;
 
         private GameObject player;
         private Vector2 initialPosition;
@@ -55,6 +56,12 @@ namespace Mechanics
                 targetPosition = initialPosition + directionAwayFromPlayer * moveRadius;
 
                 moveSpeed = originalMoveSpeed * (1 + speedIncreasePercentage);
+
+                if (transform.GetChild(0).CompareTag("Cat"))
+                {
+                    // Play sound
+                    animalSound.Play();
+                }
             }
             else
             {

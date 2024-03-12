@@ -8,6 +8,7 @@ namespace UI
     {
         [SerializeField] private TransitionSettings transitionSettings;
         [SerializeField] private Animator boatAnimation;
+        [SerializeField] private AudioSource transitionSound;
 
         [Range(0, 3f)]
         public float loadDelay = 0;
@@ -15,6 +16,7 @@ namespace UI
         public void StartGame()
         {
             boatAnimation.SetBool("TakeOff", true);
+            transitionSound.Play();
             TransitionManager.Instance().Transition("[1] Onboarding", transitionSettings, loadDelay);
             DeleteAllKeys();
         }
@@ -22,6 +24,7 @@ namespace UI
         public void ExitGame()
         {
             TransitionManager.Instance().Transition("[0] Main Menu", transitionSettings, loadDelay);
+            transitionSound.Play();
             DeleteAllKeys();
         }
 
