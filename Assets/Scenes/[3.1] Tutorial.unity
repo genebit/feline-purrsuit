@@ -1210,7 +1210,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transitionSettings: {fileID: 11400000, guid: 5d42ad7319df4a8439d74d82f30a60cc, type: 2}
   promptMessage: Press E to meet the mayor
-  transitionTo: '[2.2] Tutorial'
+  transitionTo: '[3.2] Tutorial'
 --- !u!1 &654280685
 GameObject:
   m_ObjectHideFlags: 0

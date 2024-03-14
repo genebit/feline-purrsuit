@@ -46,6 +46,7 @@ namespace Mechanics
             if (tamedCatsJson.Length > 0)
             {
                 List<string> idsOfTamedCats = JsonUtility.FromJson<TamedCatsModel>(tamedCatsJson).cats;
+                tamedCatsObj.cats = idsOfTamedCats;
                 HideAllTamedCats(idsOfTamedCats);
             }
 
@@ -76,10 +77,10 @@ namespace Mechanics
         {
             catSound.Play();
             tamedCatsObj.cats.Add(cat.name);
-            UpdateKey();
-
             cat.SetActive(false);
+
             tameMeter.value += SECOND;
+            UpdateKey();
         }
 
         IEnumerator LostCatsPrompt()
@@ -122,7 +123,7 @@ namespace Mechanics
                 }
             }
 
-            if (SceneManager.GetActiveScene().name.Equals("[4] Underwater"))
+            if (SceneManager.GetActiveScene().name.Equals("[6] Underwater"))
                 PlayerPrefs.DeleteKey(SaveKeys.TAMED_CATS);
         }
 

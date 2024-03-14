@@ -20,7 +20,7 @@ namespace Mechanic
 
         public void RandomizeName()
         {
-            string[] randomNames = { "Bubbles", "Whiskers", "Bob", "Boomer", "Dizzy", "Doodle", "Bongo", "Tom", "Darren", "Karen", "Weeboo", "Borgor", "Gene" };
+            string[] randomNames = { "Den", "Doms", "Mat", "Lex", "Blad", "Gene", "Stef", "Miguel", "Toby", "Kots", "Daddy", "Wab" };
             inputfield.text = randomNames[Random.Range(0, randomNames.Length)];
         }
 

@@ -541,7 +541,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1924015279}
         m_TargetAssemblyTypeName: UI.MainMenuManager, Assembly-CSharp
-        m_MethodName: ExitGame
+        m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -39140,6 +39140,7 @@ MonoBehaviour:
   volume: {fileID: 2012956828}
   bloomToggle: {fileID: 0}
   vignetteToggle: {fileID: 0}
+  musicSlider: {fileID: 0}
 --- !u!114 &1924015283
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -137,9 +137,9 @@ namespace UI
             else
             {
                 // specific only to scene [2.2] tutorial
-                if (SceneManager.GetActiveScene().buildIndex == 3)
+                if (SceneManager.GetActiveScene().buildIndex == 4)
                 {
-                    TransitionManager.Instance().Transition("[3] Gameplay", transitionSettings, 0);
+                    TransitionManager.Instance().Transition("[4] Gameplay", transitionSettings, 0);
                 }
                 else
                 {

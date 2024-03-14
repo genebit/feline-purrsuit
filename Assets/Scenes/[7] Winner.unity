@@ -1101,7 +1101,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5842095460237327328, guid: b521beb7dcb876046b65d048750ab558, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.979
+      value: 1.19
       objectReference: {fileID: 0}
     - target: {fileID: 5842095460237327328, guid: b521beb7dcb876046b65d048750ab558, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1378,6 +1378,7 @@ MonoBehaviour:
   volume: {fileID: 519420034}
   bloomToggle: {fileID: 0}
   vignetteToggle: {fileID: 0}
+  musicSlider: {fileID: 0}
 --- !u!114 &705466203
 MonoBehaviour:
   m_ObjectHideFlags: 0

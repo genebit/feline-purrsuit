@@ -1,4 +1,6 @@
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
 
 namespace Mechanics
@@ -26,7 +28,7 @@ namespace Mechanics
             endPosition = Vector3.right;
         }
     }
-
+#if UNITY_EDITOR
     [CustomEditor(typeof(PatrolPath))]
     public class PatrolPathGizmo : Editor
     {
@@ -59,4 +61,5 @@ namespace Mechanics
             Handles.DrawSolidDisc(end, path.transform.forward, 0.1f);
         }
     }
+#endif
 }

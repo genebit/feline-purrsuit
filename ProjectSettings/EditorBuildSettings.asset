@@ -6,27 +6,30 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/[0] Main Menu.unity
+    path: Assets/Scenes/[0] ADNU Intro.unity
+    guid: db4c5c121e5c95f4f880ca0c90953b0b
+  - enabled: 1
+    path: Assets/Scenes/[1] Main Menu.unity
     guid: 5c7391974b75a9e41a21a13ed267c9d7
   - enabled: 1
-    path: Assets/Scenes/[1] Onboarding.unity
+    path: Assets/Scenes/[2] Onboarding.unity
     guid: 96382468aeeab2842bb9a2db39fdfc71
   - enabled: 1
-    path: Assets/Scenes/[2.1] Tutorial.unity
+    path: Assets/Scenes/[3.1] Tutorial.unity
     guid: 0d42c473489002841a4a858f10171a01
   - enabled: 1
-    path: Assets/Scenes/[2.2] Tutorial.unity
+    path: Assets/Scenes/[3.2] Tutorial.unity
     guid: 1621dadbb4c467941b901beba35b1d8c
   - enabled: 1
-    path: Assets/Scenes/[3] Gameplay.unity
+    path: Assets/Scenes/[4] Gameplay.unity
     guid: a5f86124a61d7894a882cfc508967a37
   - enabled: 1
-    path: Assets/Scenes/[4] Underwater.unity
+    path: Assets/Scenes/[6] Underwater.unity
     guid: f26149177e74d8c4982e183497ec7d31
   - enabled: 1
     path: Assets/Scenes/[5] Game Over.unity
     guid: c6b3f3e992adfa042aae70dad009fd70
   - enabled: 1
-    path: Assets/Scenes/[6] Winner.unity
+    path: Assets/Scenes/[7] Winner.unity
     guid: 96551c3b939194449be4767ba55fce60
   m_configObjects: {}

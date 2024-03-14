@@ -19,7 +19,7 @@ namespace UI
             transitionSound.Play();
             DeleteAllKeys();
 
-            TransitionManager.Instance().Transition("[1] Onboarding", transitionSettings, loadDelay);
+            TransitionManager.Instance().Transition("[2] Onboarding", transitionSettings, loadDelay);
         }
 
         public void ExitGame()
@@ -28,7 +28,7 @@ namespace UI
             transitionSound.Play();
             DeleteAllKeys();
 
-            TransitionManager.Instance().Transition("[0] Main Menu", transitionSettings, loadDelay);
+            TransitionManager.Instance().Transition("[1] Main Menu", transitionSettings, loadDelay);
         }
 
         public void QuitGame()
